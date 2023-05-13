@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'FonteGamer';
+    src: url(../fontes/Fun\ Games.ttf);
+}
+
+@font-face {
+    font-family: 'FonteComum';
+    src: url(../fontes/Gameplay.ttf);
+}
+
+body {
+    background: rgb(19, 14, 2);
+}
+
+#tituloGG {
+    font-size: 100px;
+    font-style: normal;
+}
+
+#titulo {
+    text-align: center;
+    margin: 20px auto;
+    font-family: "FonteGamer";
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #ffcdcd;
+    text-shadow: 0 0 5px #ffd9d9, 0 0 10px #ffa7a7,
+        0 0 15px #a82f2f, 0 0 20px #3a0a0a,
+        0 0 35px #330303, 0 0 40px #240303;
+}
+
+a {
+    border-radius: 5px;
+    border: #db2727 solid;
+    padding: 5px 10px;
+    margin: 10px;
+    font-family: "FonteComum";
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ffd5d5;
+    text-shadow: 0 0 5px #db2727, 0 0 10px #991717,
+        0 0 15px #701919, 0 0 20px #581313,
+        0 0 35px #410b0b
+}
+
+a#elemental, a#forca {
+    text-align: right;
+}

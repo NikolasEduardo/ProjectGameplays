@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="css/jogodaforca.css">
+    <link rel="stylesheet" href="css/geral.css">
+</head>
+<body onload="sorteia()">
+    <div id="jogo">
+        <div id="titulo">
+            <p>elemental card</p>
+        </div>
+        <div id="tabeladiv" border="0" align="center">
+            <table id="tabela">
+                <tr>
+                    <td>
+                        <div id="acerto">ACERTOS: 0</div>
+                        <br>
+                        <div id="palcerta">PALAVRAS CERTAS: 0<br>PALAVRAS ERRADAS: 0</div>
+                    </td>
+                    <td>
+                        <div id="forca" class="anima">
+                            <img src="images/forca1.png" id="imagem">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <table id="tabela" border="0" align="center">
+                <tr>
+                    <td>
+                        <br>
+                        <div id="tema">TEMA: Fruta</div>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="tentativa">
+                            <form id="tenta"></form>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <table id="tabela" border="0" align="center">
+                <tr>
+                    <td>
+                        <div id="letras">
+                            <p align="center">
+                                <button type="button" id="Q" onmousedown="Confere('Q')" onmouseup="acabou()">Q</button>
+                                <button type="button" id="W" onmousedown="Confere('W')" onmouseup="acabou()">W</button>
+                                <button type="button" id="E" onmousedown="Confere('E')" onmouseup="acabou()">E</button>
+                                <button type="button" id="R" onmousedown="Confere('R')" onmouseup="acabou()">R</button>
+                                <button type="button" id="T" onmousedown="Confere('T')" onmouseup="acabou()">T</button>
+                                <button type="button" id="Y" onmousedown="Confere('Y')" onmouseup="acabou()">Y</button>
+                                <button type="button" id="U" onmousedown="Confere('U')" onmouseup="acabou()">U</button>
+                                <button type="button" id="I" onmousedown="Confere('I')" onmouseup="acabou()">I</button>
+                                <button type="button" id="O" onmousedown="Confere('O')" onmouseup="acabou()">O</button>
+                                <button type="button" id="P" onmousedown="Confere('P')" onmouseup="acabou()">P</button>
+                                <br><br>
+                                <button type="button" id="A" onmousedown="Confere('A')" onmouseup="acabou()">A</button>
+                                <button type="button" id="S" onmousedown="Confere('S')" onmouseup="acabou()">S</button>
+                                <button type="button" id="D" onmousedown="Confere('D')" onmouseup="acabou()">D</button>
+                                <button type="button" id="F" onmousedown="Confere('F')" onmouseup="acabou()">F</button>
+                                <button type="button" id="G" onmousedown="Confere('G')" onmouseup="acabou()">G</button>
+                                <button type="button" id="H" onmousedown="Confere('H')" onmouseup="acabou()">H</button>
+                                <button type="button" id="J" onmousedown="Confere('J')" onmouseup="acabou()">J</button>
+                                <button type="button" id="K" onmousedown="Confere('K')" onmouseup="acabou()">K</button>
+                                <button type="button" id="L" onmousedown="Confere('L')" onmouseup="acabou()">L</button>
+                                <br><br>
+                                <button type="button" id="Z" onmousedown="Confere('Z')" onmouseup="acabou()">Z</button>
+                                <button type="button" id="X" onmousedown="Confere('X')" onmouseup="acabou()">X</button>
+                                <button type="button" id="C" onmousedown="Confere('C')" onmouseup="acabou()">C</button>
+                                <button type="button" id="V" onmousedown="Confere('V')" onmouseup="acabou()">V</button>
+                                <button type="button" id="B" onmousedown="Confere('B')" onmouseup="acabou()">B</button>
+                                <button type="button" id="N" onmousedown="Confere('N')" onmouseup="acabou()">N</button>
+                                <button type="button" id="M" onmousedown="Confere('M')" onmouseup="acabou()">M</button>
+                                <button type="button" id="-" onmousedown="Confere('-')" onmouseup="acabou()">-</button>
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <a href="index.html">Voltar Para a Tela Inicial</a>
+        </div>
+    </div>
+</body>
+<script src="js/jogodaforca.js"></script>
+</html>

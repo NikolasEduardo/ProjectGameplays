@@ -1,85 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whatsapp 2 com Node e Socket</title>
-    <link rel="icon" type="imagens/png" href="imagens/whatsapp.png" />
-    <style>
-        #outro{
-            text-align: left;
-            background-color: deepskyblue;
-            margin: 5px 10px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            width: 90%;
-        }
-        #usuario{
-            text-align: right;
-            background-color: cornflowerblue;
-            margin: 5px 10px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            width: 90%;
-        }
-    </style>
+    <title>GamerZone - Central de Jogos</title>
+    <link rel="stylesheet" href="css/telainicial.css">
 </head>
-<body>
-    <ul id="mensagens"></ul>
-    <form>
-        <input type="text" id="nome" placeholder="Seu nome de usuário" maxlength="20">
-        <input type="text" id="mensagem" placeholder="Sua Mensagem" maxlength="2000">
-        <br><br>
-        <button>Enviar</button>
-    </form>
+
+<body align="center">
+    <div>
+        <p id="titulo"><i id="tituloGG">G</i>amer<i id="tituloGG">Z</i>one</p>
+    </div>
+    <a href="" id="troca">Troca Troca Palavras</a>
+    <a href="jogodaforca.html" id="forca">Jogo da forca</a> <br><br><br>
+    <a href="jogodavelha.html" id="velha">Jogo da velha</a>
+    <a href="" id="elemental">Elemental Cards</a> <br><br><br>
+    <a href="" id="personagem">Personagens</a>
+    <a href="chat.html" id="chat">Chat global</a>
 </body>
-<script src="/socket.io/socket.io.js"></script>
-<script>
-    //Cria uma instância do Socket.IO
-    const socket = io()
 
-    //Seleciona o input do nome do usuário
-    const nomeInput = document.getElementById('nome');
-    //Seleciona o input da mensagem
-    const mensagemInput = document.getElementById('mensagem');
-    //Seleciona a lista de mensagens
-    const mensagens = document.getElementById('mensagens');
-
-    //Adiciona um evento para o envio do formulário
-    document.querySelector('form').addEventListener('submit', evento => {
-        //Previne o envio padrão do formulário para não atualizar a página
-        evento.preventDefault();
-        //Obptem o valor do input do nome do usuário
-        const nome = nomeInput.value;
-        //Obtém o valor do input da mensagem
-        const mensagem = mensagemInput.value;
-
-        //Método JAVASCRIPT que verifica os valores válido (Não está em branco os campos)
-        //EMIT envia um evento chamado "chat message" com um objeto contendo os valores
-        //TRIM() é um método que remove os espaços em branco do inicio ao fim de uma string
-        nome.trim() && mensagem.trim() && socket.emit('chat message', {nome, mensagem});
-        //Limpa o input da mensagem
-        mensagemInput.value = '';
-        //Desabilita o input do nome do usuário após a primeira mensagem
-        nomeInput.disabled = true;
-    });
-
-    //Adiciona um evento de mensagem recebido para o servidor
-    socket.on('chat message', dados => {
-        //Cria um elemento de lista para exibir a mensagem
-        const lista = document.createElement('li');
-        //Atribuir uma ID de acordo com o seu nome de usuário
-        if(dados.nome === nomeInput.value){
-            lista.setAttribute('id', 'usuario')
-        }else {
-            lista.setAttribute('id', 'outro')
-        }
-        //Define o texto da mensagem
-        lista.textContent = `${dados.nome}: ${dados.mensagem}`;
-        //Adiciona o elemento de mensagens
-        mensagens.appendChild(lista);
-    })
-</script>
-    <script src="server.js"></script>
 </html>

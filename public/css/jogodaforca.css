@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'FonteGamer';
+    src: url(../fontes/Fun\ Games.ttf);
+}
+
+@font-face {
+    font-family: 'FonteComum';
+    src: url(../fontes/Gameplay.ttf);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+body {
+    background: rgb(19, 14, 2);
+    margin: 0;
+}
+
+button {
+    font-family: "FonteComum";
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #b10c0c 0%, #a71818 50%, #791515 50%, #350a0a);
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    box-shadow:
+        0px 1px 3px rgba(000, 000, 000, 0.5),
+        inset 0px 0px 2px rgba(255, 255, 255, 1);
+    text-shadow:
+        0px -1px 0px rgba(000, 000, 000, 0.2) 0px 1px 0px rgba(255, 255, 255, 1);
+}
+
+button:hover {
+    background: linear-gradient(to top, #6d0808 0%, #640f0f 50%, #520e0e 50%, #140404);
+}
+
+button:disabled {
+    background: #5e2d2d;
+    color: #240909;
+}
+
+#jogo {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#titulo {
+    /*NEON*/
+    text-align: center;
+    margin: 20px auto;
+    font-family: "FonteGamer";
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #ffcdcd;
+    text-shadow: 0 0 5px #ffd9d9, 0 0 10px #ffa7a7,
+        0 0 15px #a82f2f, 0 0 20px #3a0a0a,
+        0 0 35px #330303, 0 0 40px #240303
+}
+
+#tabeladiv {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#forca img {
+    width: 55%;
+    height: 55%;
+    float: right;
+}
+
+#tema {
+    text-align: center;
+    margin: 5px auto;
+    font-family: "FonteComum";
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ffd6d6;
+    text-shadow: 0 0 5px #ffd9d9, 0 0 10px #ffa7a7,
+        0 0 15px #a82f2f, 0 0 20px #3a0a0a,
+        0 0 35px #330303, 0 0 40px #240303
+}
+
+#tentativa {
+    font-size: 40px;
+    color: #4e2a2a;
+    font-weight: bold;
+    text-align: center;
+}
+
+#tenta {
+    margin-left: 5px;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(139, 34, 34);
+}
+
+input {
+    margin-left: 1px;
+    text-align: center;
+    font-size: 20px;
+    color: rgb(139, 34, 34);
+}
+
+#acerto {
+    text-align: left;
+    margin: 5px auto;
+    font-family: "FonteComum";
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #ffd5d5;
+    text-shadow: 0 0 5px #db2727, 0 0 10px #991717,
+        0 0 15px #701919, 0 0 20px #581313,
+        0 0 35px #410b0b, 0 0 40px #1f0606,
+        0 0 50px #130101, 0 0 75px #000000;
+}
+
+a {
+    text-align: left;
+    margin: 5px auto;
+    font-family: "FonteComum";
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ffd5d5;
+    text-shadow: 0 0 5px #db2727, 0 0 10px #991717,
+        0 0 15px #701919, 0 0 20px #581313,
+        0 0 35px #410b0b, 0 0 40px #1f0606,
+        0 0 50px #130101, 0 0 75px #000000;
+}
+
+#palcerta {
+    text-align: left;
+    margin: 5px auto;
+    font-family: "FonteComum";
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #ffbcbc;
+    text-shadow: 0 0 5px #ac1b1b, 0 0 10px #cf4848,
+        0 0 15px #b36c6c;
+}
+
+#tabAcerto {
+    width: 30%;
+}
+
+.tentativa {
+    background-color: #d8bbbb;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    margin: 1px;
+    box-shadow: 0 0 10px #ffd9d9;
+}
+
+@media (max-width: 550px) {
+    #acerto {
+        font-size: 25px;
+    }
+
+    #palcerta {
+        font-size: 20px;
+    }
+
+    a {
+        font-size: 20px;
+        padding-bottom: 50px;
+    }
+
+    #tema {
+        font-size: 25px;
+    }
+
+    .tentativa {
+        width: 25px;
+        height: 25px;
+    }
+
+    button {
+        font-size: 19px;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    #forca img {
+        width: 85%;
+        height: 85%;
+        float: right;
+    }
+}

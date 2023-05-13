@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'FonteGamer';
+    src: url(../fontes/Fun\ Games.ttf);
+}
+
+@font-face {
+    font-family: 'FonteComum';
+    src: url(../fontes/Gameplay.ttf);
+}
+
+* {
+    border: 1px solid black;
+}
+
+body {
+    background: rgb(19, 14, 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    margin: 20px auto;
+    font-family: "FonteGamer";
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #ffcdcd;
+    text-shadow: 0 0 5px #ffd9d9, 0 0 10px #ffa7a7,
+        0 0 15px #a82f2f, 0 0 20px #3a0a0a,
+        0 0 35px #330303, 0 0 40px #240303;
+}
+
+ul {
+    list-style: none;
+    font-size: x-large;
+    margin: 0;
+    padding: 0;
+}
+
+#outro {
+    text-align: left;
+    background-color: deepskyblue;
+    margin: 5px 10px;
+    padding: 10px 15px;
+    border-radius: 0px 15px 15px 15px;
+    width: fit-content;
+    max-width: 90%;
+}
+
+#usuario {
+    text-align: right;
+    background-color: cornflowerblue;
+    margin: 5px 10px;
+    padding: 10px 15px;
+    border-radius: 15px 0px 15px 15px;
+    width: fit-content;
+    margin-left: auto;
+}
+
+#conteudo {
+    width: 70%;
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+/* Define o estilo do span dentro do li com id usuario */
+li#usuario span {
+    font-family: Arial;
+    color: blue;
+}
+
+/* Define o estilo do span dentro do li com id outro */
+li#outro span {
+    font-family: Arial;
+    color: red;
+}
+
+#mensagem {
+    width: 75%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: larger;
+}
+
+#enviar {
+    width: 25%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: larger;
+}
+
+form {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    flex-wrap: nowrap;
+}
+
+@media (max-width: 500px) {
+    #conteudo {
+        width: 100%;
+    }
+}

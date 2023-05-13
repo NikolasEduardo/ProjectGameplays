@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp 2 com Node e Socket</title>
+    <link rel="icon" type="image/png" href="images/whatsapp.png" />
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+
+<body>
+    <div>
+        <h1>CHAT GLOBAL</h1>
+    </div>
+    <nav id="conteudo">
+        <ul id="mensagens"></ul>
+    </nav>
+    <form>
+        <input type="text" id="mensagem" placeholder="Sua Mensagem" maxlength="2000">
+        <button id="enviar">✈</button>
+        <br>
+        <input type="text" id="nome" placeholder="Seu nome de usuário" maxlength="20">
+    </form>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/chat.js"></script>
+<script src="server.js"></script>
+
+</html>

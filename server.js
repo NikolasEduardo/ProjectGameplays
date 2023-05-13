@@ -14,7 +14,7 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 // Criar um roteador JSON Server para simular uma API REST
-const router = jsonServer.router('private/db.json');
+const router = jsonServer.router('db.json');
 
 // Usar o middleware JSON Server para tratar as requisições
 app.use('/api', router);
@@ -42,7 +42,7 @@ io.on('connection', (socket) => {
 
 // Iniciar o servidor na porta 3000
 server.listen(3000, () => {
-    console.log('Servidor rodando na porta 3000');
+    console.log('Servidor rodando http://localhost:3000');
 });
 
 //CÓDIGO ANTIGO SEM JSON-SERVER

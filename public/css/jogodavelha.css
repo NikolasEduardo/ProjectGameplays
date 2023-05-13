@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'FonteGamer';
+    src: url(../fontes/Fun\ Games.ttf);
+}
+
+@font-face {
+    font-family: 'FonteComum';
+    src: url(../fontes/Gameplay.ttf);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+#titulo {
+    text-align: center;
+    margin: 20px auto;
+    font-family: "FonteGamer";
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #ffcdcd;
+    text-shadow: 0 0 5px #ffd9d9, 0 0 10px #ffa7a7,
+        0 0 15px #a82f2f, 0 0 20px #3a0a0a,
+        0 0 35px #330303, 0 0 40px #240303
+}
+
+body {
+    background: rgb(19, 14, 2);
+    margin: 0;
+}
+
+#tudodentro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#jogo {
+    width: 603px;
+    height: 603px;
+    border: solid 3px #9c1e1e;
+    display: inline-block;
+    float: left;
+    background-color: #d8bbbb;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #ffd9d9;
+}
+
+#resultado {
+    margin-left: 30px;
+    float: left;
+}
+
+#resposta {
+    font-size: xx-large;
+    font-family: "FonteComum";
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(203, 203, 255);
+    text-shadow: 0 0 5px #1400c5, 0 0 10px #2300c0,
+        0 0 15px #120077, 0 0 20px #08002c,
+        0 0 35px #040333, 0 0 40px #0a0324
+}
+
+.linha {
+    height: 200px;
+    border-bottom: solid 2px #9c1e1e;
+}
+
+.casa {
+    width: 199px;
+    height: 100%;
+    border-right: solid 2px #9c1e1e;
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.casa>img {
+    width: 180px;
+}
+
+.xis {
+    font-family: "FonteComum";
+    color: #1a5fe7;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #d9ffff, 0 0 10px #a7f2ff,
+        0 0 15px #2f82a8, 0 0 20px #0a1f3a,
+        0 0 35px #032033, 0 0 40px #030d24
+}
+
+.bola {
+    font-family: "FonteComum";
+    color: #f52c31;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ffd9d9, 0 0 10px #ffa7a7,
+        0 0 15px #a82f2f, 0 0 20px #3a0a0a,
+        0 0 35px #330303, 0 0 40px #240303
+}
+
+.velha {
+    font-family: "FonteComum";
+    color: #df42ad;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 0 0 5px #ffd9ff, 0 0 10px #eaa7ff,
+        0 0 15px #9a2fa8, 0 0 20px #380a3a,
+        0 0 35px #2d0333, 0 0 40px #200324
+}
+
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    background-color: blueviolet;
+    background-image: linear-gradient(to bottom, #df9ac9, #a16e91);
+    border-radius: 20px;
+    color: white;
+    font-family: "FonteComum";
+    font-size: 40px;
+    font-weight: 100;
+    padding: 40px;
+    text-decoration: none;
+    box-shadow: 1px 1px 20px 0px #37de9c;
+    text-shadow: 1px 1px 20px #df9ac9;
+    border: solid #37de9c 1px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    background: coral;
+    background-image: linear-gradient(to bottom, #b1699a, #633855);
+    text-decoration: none;
+}
+
+@media (max-width: 1010px) {
+    #tudodentro {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    #jogo {
+        
+    }
+}
