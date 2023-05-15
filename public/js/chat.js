@@ -50,7 +50,7 @@ document.querySelector('form').addEventListener('submit', evento => {
 //Adiciona um evento de mensagem recebido para o servidor
 socket.on('chat message', dados => {
     //Cria um elemento de lista para exibir a mensagem
-    const lista = document.createElement('li');
+    const lista = document.createElement('div');
     //Atribuir uma ID de acordo com o seu nome de usuário
     if (dados.nome === nomeInput.value) {
         lista.setAttribute('id', 'usuario')
@@ -63,7 +63,7 @@ socket.on('chat message', dados => {
     span.innerHTML = dados.nome;
     console.log(lista);
     //Define o texto da mensagem com uma quebra de linha após o nome
-    lista.innerHTML = `${span.outerHTML}:\n${escapeHTML(dados.mensagem)}`;
+    lista.innerHTML = `<div>${span.outerHTML}:\n<textarea readonly row="30" disabled id="areatexto">${escapeHTML(dados.mensagem)}</textarea></div>`;
     //Adiciona o estilo para preservar o espaço em branco
     lista.style.whiteSpace = "pre";
     //Adiciona o elemento de mensagens

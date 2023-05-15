@@ -19,7 +19,7 @@ body {
     align-items: center;
 }
 
-h1{
+h1 {
     text-align: center;
     margin: 20px auto;
     font-family: "FonteGamer";
@@ -31,11 +31,12 @@ h1{
         0 0 35px #330303, 0 0 40px #240303;
 }
 
-ul {
+div#mensagens {
     list-style: none;
     font-size: x-large;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 #outro {
@@ -44,8 +45,10 @@ ul {
     margin: 5px 10px;
     padding: 10px 15px;
     border-radius: 0px 15px 15px 15px;
-    width: fit-content;
-    max-width: 90%;
+    width: auto;
+    max-width: 75%;
+    word-wrap: break-word;
+    height: fit-content;
 }
 
 #usuario {
@@ -54,7 +57,10 @@ ul {
     margin: 5px 10px;
     padding: 10px 15px;
     border-radius: 15px 0px 15px 15px;
-    width: fit-content;
+    width: auto;
+    max-width: 75%;
+    word-wrap: break-word;
+    height: fit-content;
     margin-left: auto;
 }
 
@@ -62,16 +68,18 @@ ul {
     width: 70%;
     height: 70vh;
     overflow-y: scroll;
+    scroll-behavior: smooth;
+    word-wrap: break-word;
 }
 
 /* Define o estilo do span dentro do li com id usuario */
-li#usuario span {
+div#usuario span {
     font-family: Arial;
     color: blue;
 }
 
 /* Define o estilo do span dentro do li com id outro */
-li#outro span {
+div#outro span {
     font-family: Arial;
     color: red;
 }
@@ -81,6 +89,7 @@ li#outro span {
     padding: 10px 15px;
     border-radius: 15px;
     font-size: larger;
+    background-color: white;
 }
 
 #enviar {
@@ -96,6 +105,20 @@ form {
     flex-direction: row;
     align-items: space-between;
     flex-wrap: nowrap;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    font-size: x-large;
+    background: #00000000;
+    flex-wrap: wrap;
+    color: black;
+    height: fit-content;
+}
+
+#mensagem {
+    word-wrap: break-word;
 }
 
 @media (max-width: 700px) {
