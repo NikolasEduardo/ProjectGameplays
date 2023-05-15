@@ -98,7 +98,7 @@ form {
     flex-wrap: nowrap;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
     #conteudo {
         width: 100%;
     }
