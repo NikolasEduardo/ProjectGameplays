@@ -8,8 +8,6 @@ const mensagemInput = document.getElementById('mensagem');
 //Seleciona a lista de mensagens
 const mensagens = document.getElementById('mensagens');
 
-const conteudo = document.getElementById('conteudo');
-
 //Cria uma função para escapar os caracteres especiais do HTML
 function escapeHTML(text) {
     return text.replace(/[&<>"']/g, function (match) {
@@ -58,16 +56,27 @@ socket.on('chat message', dados => {
         lista.setAttribute('id', 'outro')
     }
     //Cria um elemento span para exibir o nome com uma fonte diferente
-    const span = document.createElement('span');
+    const divname = document.createElement('div');
+    divname.setAttribute('class', 'name'),
     //Define o texto do span com o nome usando innerHTML
-    span.innerHTML = dados.nome;
+    divname.innerHTML = dados.nome;
     console.log(lista);
     //Define o texto da mensagem com uma quebra de linha após o nome
-    lista.innerHTML = `<div>${span.outerHTML}:\n<textarea readonly row="30" disabled id="areatexto">${escapeHTML(dados.mensagem)}</textarea></div>`;
+    lista.innerHTML = `
+            <div>
+                ${divname.outerHTML}
+                <div class="text">${escapeHTML(dados.mensagem)}</div>
+            </div>`;
     //Adiciona o estilo para preservar o espaço em branco
     lista.style.whiteSpace = "pre";
     //Adiciona o elemento de mensagens
     mensagens.appendChild(lista);
 
-    conteudo.scrollTop = conteudo.scrollHeight - conteudo.clientHeight;
+    mensagens.scrollTop = mensagens.scrollHeight - mensagens.clientHeight;
 })
+
+var textarea = document.querySelector('textarea');
+textarea.addEventListener('input', function () {
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
+});

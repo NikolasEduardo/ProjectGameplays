@@ -11,29 +11,23 @@
 </head>
 
 <body>
-    <div>
-        <h1>CHAT GLOBAL</h1>
-    </div>
-    <div id="conteudo">
-        <!-- <ul id="mensagens"></ul> -->
+    <div class="conversas">
+        <div class="header">
+            <h1>CHAT GLOBAL</h1>
+        </div>
+
         <div id="mensagens"></div>
+
+        <form class="typebox">
+            <textarea id="mensagem" placeholder="Sua Mensagem" maxlength="2000"></textarea>
+            <button id="enviar">✈</button>
+        </form>
     </div>
-    <form>
-        <textarea id="mensagem" placeholder="Sua Mensagem" maxlength="2000"></textarea>
-        <button id="enviar">✈</button>
-        <br>
-        <input type="text" id="nome" placeholder="Seu nome de usuário" maxlength="20">
-    </form>
+    <input type="text" id="nome" placeholder="Seu nome de usuário" maxlength="20">
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/chat.js"></script>
 <script src="server.js"></script>
-<script>
-    $("#areatexto").bind("input", function (e) {
-        while ($(this).outerHeight() < this.scrollHeight + parseFloat($(this).css("borderTopWidth")) + parseFloat($(this).css("borderBottomWidth"))) {
-            $(this).height($(this).height() + 1);
-        };
-    });
-</script>
+
 
 </html>

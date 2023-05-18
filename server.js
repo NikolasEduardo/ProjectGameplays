@@ -17,10 +17,13 @@ const io = socketio(server);
 const router = jsonServer.router('db.json');
 
 // Usar o middleware JSON Server para tratar as requisições
+// Para indicar a rota, deve se estar no http://localhost:3000/api/usuarios
 app.use('/api', router);
 
 // Definir uma rota estática para servir os arquivos do cliente
 app.use(express.static('public'));
+
+app.get('/', (req, res) => res.sendFile(__dirname + 'public/index.html'));
 
 //Evento para o usuário conectar ao servidor
 io.on('connection', (socket) => {
