@@ -11,19 +11,22 @@
 </head>
 
 <body>
-    <div class="conversas">
-        <div class="header">
-            <h1>CHAT GLOBAL</h1>
+    <div id="app">
+        <div class="conversas">
+            <div class="header">
+                <a href="index.html"><img src="images/casinha.png"></a>
+                <h1>CHAT GLOBAL</h1><br>
+                <input type="text" id="nome" placeholder="Seu nome de usuário" maxlength="20">
+            </div>
+
+            <div id="mensagens"></div>
+
+            <form class="typebox">
+                <textarea id="mensagem" placeholder="Sua Mensagem" maxlength="2000"></textarea>
+                <button id="enviar"><img src="images/enviar.png" height="40px"></button>
+            </form>
         </div>
-
-        <div id="mensagens"></div>
-
-        <form class="typebox">
-            <textarea id="mensagem" placeholder="Sua Mensagem" maxlength="2000"></textarea>
-            <button id="enviar">✈</button>
-        </form>
     </div>
-    <input type="text" id="nome" placeholder="Seu nome de usuário" maxlength="20">
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/chat.js"></script>

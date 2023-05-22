@@ -49,6 +49,7 @@ document.querySelector('form').addEventListener('submit', evento => {
 socket.on('chat message', dados => {
     //Cria um elemento de lista para exibir a mensagem
     const lista = document.createElement('div');
+    lista.setAttribute('class', 'message');
     //Atribuir uma ID de acordo com o seu nome de usuário
     if (dados.nome === nomeInput.value) {
         lista.setAttribute('id', 'usuario')
@@ -57,7 +58,7 @@ socket.on('chat message', dados => {
     }
     //Cria um elemento span para exibir o nome com uma fonte diferente
     const divname = document.createElement('div');
-    divname.setAttribute('class', 'name'),
+    divname.setAttribute('class', 'name');
     //Define o texto do span com o nome usando innerHTML
     divname.innerHTML = dados.nome;
     console.log(lista);
@@ -67,16 +68,8 @@ socket.on('chat message', dados => {
                 ${divname.outerHTML}
                 <div class="text">${escapeHTML(dados.mensagem)}</div>
             </div>`;
-    //Adiciona o estilo para preservar o espaço em branco
-    lista.style.whiteSpace = "pre";
     //Adiciona o elemento de mensagens
     mensagens.appendChild(lista);
 
     mensagens.scrollTop = mensagens.scrollHeight - mensagens.clientHeight;
 })
-
-var textarea = document.querySelector('textarea');
-textarea.addEventListener('input', function () {
-    this.style.height = 'auto';
-    this.style.height = (this.scrollHeight) + 'px';
-});
