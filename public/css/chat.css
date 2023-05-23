@@ -35,10 +35,7 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    background: url(../images/background-chat.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: rgb(19, 14, 2);
 }
 
 #app {
@@ -159,6 +156,7 @@ div#outro>div>.name {
     color: white;
     border: none;
     border-left: 1px solid white;
+    cursor: pointer;
 }
 
 form {

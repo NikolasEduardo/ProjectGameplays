@@ -8,6 +8,11 @@
     src: url(../fontes/Gameplay.ttf);
 }
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: rgb(19, 14, 2);
 }
@@ -18,7 +23,9 @@ body {
 }
 
 #titulo {
+    cursor: default;
     text-align: center;
+    font-style: normal;
     margin: 20px auto;
     font-family: "FonteGamer";
     font-size: 70px;
@@ -29,11 +36,18 @@ body {
         0 0 35px #330303, 0 0 40px #240303;
 }
 
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
 a {
     border-radius: 5px;
     border: #db2727 solid;
     padding: 5px 10px;
-    margin: 10px;
+    margin: 20px;
     font-family: "FonteComum";
     font-size: 30px;
     text-transform: uppercase;
@@ -45,4 +59,22 @@ a {
 
 a#elemental, a#forca {
     text-align: right;
+}
+
+div#conta > a {
+    font-size: 20px;
+    border: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: #240303;
+}
+
+header > * {
+    margin: 0;
+    padding: 0;
 }
