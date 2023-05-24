@@ -2,7 +2,7 @@
 const socket = io()
 
 //Seleciona o input do nome do usuário
-const nomeInput = document.getElementById('nome');
+const nomeInput = localStorage.getItem("nomeUsuario");
 //Seleciona o input da mensagem
 const mensagemInput = document.getElementById('mensagem');
 //Seleciona a lista de mensagens
@@ -31,7 +31,7 @@ document.querySelector('form').addEventListener('submit', evento => {
     //Previne o envio padrão do formulário para não atualizar a página
     evento.preventDefault();
     //Obptem o valor do input do nome do usuário
-    const nome = nomeInput.value;
+    const nome = nomeInput;
     //Obtém o valor do input da mensagem
     const mensagem = mensagemInput.value;
 
@@ -51,7 +51,7 @@ socket.on('chat message', dados => {
     const lista = document.createElement('div');
     lista.setAttribute('class', 'message');
     //Atribuir uma ID de acordo com o seu nome de usuário
-    if (dados.nome === nomeInput.value) {
+    if (dados.nome === nomeInput) {
         lista.setAttribute('id', 'usuario')
     } else {
         lista.setAttribute('id', 'outro')
