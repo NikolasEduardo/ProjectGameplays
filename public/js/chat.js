@@ -1,3 +1,10 @@
+var nome = JSON.parse(localStorage.getItem('nomeUsuario'))[0]
+var fotoperfil = JSON.parse(localStorage.getItem('nomeUsuario'))[2]
+if (fotoperfil == "null") {
+    fotoperfil = "images/user.jpg";
+}
+var cor = JSON.parse(localStorage.getItem('nomeUsuario'))[3]
+
 //Cria uma instância do Socket.IO
 const socket = io()
 
@@ -40,14 +47,14 @@ document.querySelector('form').addEventListener('submit', evento => {
     //Obtém o valor do input da mensagem
     const mensagem = mensagemInput.value;
 
+    const corUser = cor
+
     //Método JAVASCRIPT que verifica os valores válido (Não está em branco os campos)
     //EMIT envia um evento chamado "chat message" com um objeto contendo os valores
     //TRIM() é um método que remove os espaços em branco do inicio ao fim de uma string
-    nome.trim() && mensagem.trim() && socket.emit('chat message', { nome, mensagem });
+    nome.trim() && mensagem.trim() && socket.emit('chat message', { nome, mensagem, corUser });
     //Limpa o input da mensagem
     mensagemInput.value = '';
-    //Desabilita o input do nome do usuário após a primeira mensagem
-    nomeInput.disabled = true;
 });
 
 //Adiciona um evento de mensagem recebido para o servidor
@@ -66,14 +73,16 @@ socket.on('chat message', dados => {
     divname.setAttribute('class', 'name');
     //Define o texto do span com o nome usando innerHTML
     divname.innerHTML = dados.nome;
+    divname.style.color = `${dados.corUser}`
     console.log(lista);
     //Define o texto da mensagem com uma quebra de linha após o nome
     lista.innerHTML = `
-            <div>
+            <div style="border: solid 2px ${dados.corUser};">
                 ${divname.outerHTML}
                 <div class="text">${escapeHTML(dados.mensagem)}</div>
             </div>`;
     //Adiciona o elemento de mensagens
+    mensagens.style
     mensagens.appendChild(lista);
 
     mensagens.scrollTop = mensagens.scrollHeight - mensagens.clientHeight;
