@@ -37,7 +37,7 @@ document.querySelector('form').addEventListener('submit', evento => {
                         } else {
                             alert("permitido")
                             enviarDados()
-                            localStorage.setItem("nomeUsuario", username);
+                            localStorage.setItem("nomeUsuario", JSON.stringify([username, senhauser, "images/user.jpg", "white", "0"]));
                             window.location.replace("index.html");
                         }
                     } else {
@@ -56,7 +56,7 @@ document.querySelector('form').addEventListener('submit', evento => {
                 if (data.length > 0) {
                     if (data[0].senha == senhauser) {
                         //inserir um dado local
-                        localStorage.setItem("nomeUsuario", data[0].nome);
+                        localStorage.setItem("nomeUsuario", JSON.stringify([data[0].nome, data[0].senha, data[0].fotoperfil, data[0].cor, data[0].xp]));
                         console.log("funcionou");
                         window.location.replace("index.html");
                     } else {
@@ -85,7 +85,9 @@ function enviarDados() {
         body: JSON.stringify({
             nome: username,
             senha: senhauser,
-            fotoperfil: "null"
+            fotoperfil: "null",
+            cor: "white",
+            xp: "0"
         })
     })
         .then(response => response.json())

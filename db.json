@@ -1,18 +1,20 @@
 {
   "usuarios": [
     {
-      "id": 1,
-      "nome": "usuarioteste"
-    },
-    {
-      "id": 2,
-      "nome": "ohmano"
-    },
-    {
       "nome": "Arroz",
       "senha": "123456789",
       "fotoperfil": "null",
-      "id": 3
+      "cor": "Yellow",
+      "xp": "2482",
+      "id": 1
+    },
+    {
+      "nome": "Azzy",
+      "senha": "123456789",
+      "fotoperfil": "null",
+      "cor": "White",
+      "xp": "0",
+      "id": 2
     }
   ],
   "mensagens": [
@@ -20,7 +22,7 @@
       "id": 1,
       "nome": "usuarioteste",
       "mensagem": "eu enviei isso",
-      "server": "82osj0593p"
+      "server": "global"
     }
   ]
 }

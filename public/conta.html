@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Conta</title>
+    <link rel="stylesheet" href="css/conta.css">
+</head>
+
+<body>
+    <div id="perfiluser">
+        <div id="foto" style="background-image: url(images/user.jpg);">
+            <input type="file" id="escolherimg" accept=".png,.jpeg,.jpg,.webm,.">
+        </div>
+        <div>
+            <div id="nomeperfil">
+                <select id="cores" onchange="mudarCor()">
+                    <option value="IndianRed">Vermelho-índio</option>
+                    <option value="LightCoral">Coral claro</option>
+                    <option value="Salmon">Salmão</option>
+                    <option value="DarkSalmon">Salmão escuro</option>
+                    <option value="LightSalmon">Salmão claro</option>
+                    <option value="Crimson">Carmesim</option>
+                    <option value="Red">Vermelho</option>
+                    <option value="FireBrick">Tijolo de fogo</option>
+                    <option value="Pink">Rosa</option>
+                    <option value="LightPink">Rosa claro</option>
+                    <option value="HotPink">Rosa quente</option>
+                    <option value="DeepPink">Rosa profundo</option>
+                    <option value="MediumVioletRed">Vermelho violeta médio</option>
+                    <option value="PaleVioletRed">Vermelho violeta pálido</option>
+                    <option value="Gold">Ouro</option>
+                    <option value="Yellow">Amarelo</option>
+                    <option value="LightYellow">Amarelo claro</option>
+                    <option value="LemonChiffon">Chiffon de limão</option>
+                    <option value="LightGoldenrodYellow">Amarelo dourado claro</option>
+                    <option value="PapayaWhip">Chicote de mamão</option>
+                    <option value="Moccasin">Mocassim</option>
+                    <option value="PeachPuff">Pêssego fofo</option>
+                    <option value="PaleGoldenrod">Dourado pálido</option>
+                    <option value="Khaki">Caqui</option>
+                    <option value="Lavender">Lavanda</option>
+                    <option value="Thistle">Cardo</option>
+                    <option value="Plum">Ameixa</option>
+                    <option value="Violet">Violeta</option>
+                    <option value="Orchid">Orquídea</option>
+                    <option value="Fuchsia">Fúcsia</option>
+                    <option value="Magenta">Magenta</option>
+                    <option value="MediumOrchid">Orquídea média</option>
+                    <option value="MediumPurple">Roxo médio</option>
+                    <option value="DarkOrchid">Orquídea escura</option>
+                    <option value="MediumSlateBlue">Azul ardósia médio</option>
+                    <option value="SlateBlue">Azul ardósia</option>
+                    <option value="DarkSlateBlue">Azul ardósia escuro</option>
+                    <option value="GreenYellow">Verde amarelo</option>
+                    <option value="Chartreuse">Chartreuse</option>
+                    <option value="LawnGreen">Verde grama</option>
+                    <option value="Lime">Lima</option>
+                    <option value="PaleGreen">Verde pálido</option>
+                    <option value="LightGreen">Verde claro</option>
+                    <option value="MediumSpringGreen">Verde primavera médio</option>
+                    <option value="SpringGreen">Verde primavera</option>
+                    <option value="MediumAquamarine">Água-marinha média</option>
+                    <option value="DarkSeaGreen">Verde marinho escuro</option>
+                    <option value="LightSeaGreen">Verde marinho claro</option>
+                    <option value="Aqua">Água</option>
+                    <option value="Cyan">Ciano</option>
+                    <option value="LightCyan">Ciano claro</option>
+                    <option value="PaleTurquoise">Turquesa pálida</option>
+                    <option value="Aquamarine">Água-marinha</option>
+                    <option value="Turquoise">Turquesa</option>
+                    <option value="MediumTurquoise">Turquesa média</option>
+                    <option value="DarkTurquoise">Turquesa escura</option>
+                    <option value="CadetBlue">Azul cadete</option>
+                    <option value="SteelBlue">Azul aço</option>
+                    <option value="LightSteelBlue">Azul aço claro</option>
+                    <option value="PowderBlue">Azul pó</option>
+                    <option value="LightBlue">Azul claro</option>
+                    <option value="SkyBlue">Azul céu</option>
+                    <option value="LightSkyBlue">Azul céu claro</option>
+                    <option value="DeepSkyBlue">Azul céu profundo</option>
+                    <option value="DodgerBlue">Azul dodger</option>
+                    <option value="CornflowerBlue">Azul centáurea</option>
+                    <option value="RoyalBlue">Azul real</option>
+                    <option value="Cornsilk">Seda de milho</option>
+                    <option value="BlanchedAlmond">Amêndoa branqueada</option>
+                    <option value="Bisque">Bisque</option>
+                    <option value="NavajoWhite">Branco navajo</option>
+                    <option value="Wheat">Trigo</option>
+                    <option value="BurlyWood">Madeira robusta</option>
+                    <option value="Tan">Bronzeado</option>
+                    <option value="RosyBrown">Marrom rosado</option>
+                    <option value="SandyBrown">Marrom arenoso</option>
+                    <option value="Goldenrod">Vara dourada</option>
+                </select> <br>
+            </div>
+            <div id="level">
+                <div id="xp"></div>
+            </div>
+            <button onclick="atualizarDados()">Salvar Mudanças</button>
+        </div>
+    </div>
+</body>
+<script src="js/conta.js"></script>
+
+</html>

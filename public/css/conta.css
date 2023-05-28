@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(19, 14, 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#perfiluser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 600px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#foto {
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+input[type="file"] {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    cursor: pointer;
+    border-radius: 500px;
+}
+
+select {
+    text-align: center;
+    padding: 4px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: large;
+}
+
+#perfiluser>div:not(#foto) {
+    width: 400px;
+    color: white;
+    text-align: center;
+}
+
+#nomeperfil {
+    height: 130px;
+    padding-top: 20px;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+#level {
+    height: 20px;
+    background-color: rgb(70, 0, 0);
+    border-radius: 50px;
+}
+
+#xp {
+    height: 20px;
+    border-radius: 50px;
+}
+
+button {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: black;
+}
+
+@media (max-width: 500px) {
+    
+}

@@ -1,8 +1,13 @@
 //Cria uma instância do Socket.IO
 const socket = io()
 
+var imagem = JSON.parse(localStorage.getItem('nomeUsuario'))[2]
+if (imagem == "null") {
+    imagem = "images/user.jpg";
+}
+var cor = JSON.parse(localStorage.getItem('nomeUsuario'))[3]
 //Seleciona o input do nome do usuário
-const nomeInput = localStorage.getItem("nomeUsuario");
+var nomeInput = JSON.parse(localStorage.getItem('nomeUsuario'))[0]
 //Seleciona o input da mensagem
 const mensagemInput = document.getElementById('mensagem');
 //Seleciona a lista de mensagens
