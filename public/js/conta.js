@@ -10,29 +10,28 @@ var xp = JSON.parse(localStorage.getItem('nomeUsuario'))[4]
 level = (`${xp / 1000}`).split(".")[0];
 xp = ((xp % 1000) / 10);
 
-
-document.getElementById('perfiluser').style.border = `5px solid ${cor}`;
 document.getElementById('foto').style.backgroundImage = `url(${fotoperfil})`;
 document.getElementById('nomeperfil').innerHTML += `${nome}<br>Level ${level}`;
-document.getElementById('xp').style.backgroundColor = `${cor}`;
 document.getElementById('xp').style.width = `${xp}%`;
-document.querySelector('button').style.color = `${cor}`
-document.querySelector('button').style.border = `solid 3px ${cor}`
-document.getElementById('cores').style.color = `${cor}`;
-document.getElementById('cores').style.border = `solid 2px ${cor}`;
-
 
 function mudarCor() {
-    console.log(document.getElementById('cores').value)
     cor = document.getElementById('cores').value
+    document.getElementById('foto').style.border = `5px solid ${cor}`;
     document.getElementById('perfiluser').style.border = `5px solid ${cor}`;
     document.getElementById('xp').style.backgroundColor = `${cor}`;
-    document.getElementById('nomeperfil').style.color = `${cor}`;
-    document.getElementById('cores').style.color = `${cor}`;
-    document.getElementById('cores').style.border = `solid 2px ${cor}`;
     document.querySelector('button').style.color = `${cor}`
     document.querySelector('button').style.border = `solid 3px ${cor}`
+    document.getElementById('sair').style.color = `${cor}`
+    document.getElementById('sair').style.border = `solid 3px ${cor}`
+    document.getElementById('voltar').style.color = `${cor}`
+    document.getElementById('voltar').style.border = `solid 3px ${cor}`
+    document.getElementById('cores').style.color = `${cor}`;
+    document.getElementById('cores').style.border = `solid 2px ${cor}`;
+    document.getElementById('nomeperfil').style.color = `${cor}`;
 }
+
+document.getElementById('cores').querySelector(`option[value="${cor}"]`).selected = true;
+mudarCor();
 
 function atualizarDados() {
     fetch(`${jsonuser}?nome=${nome}`)
@@ -103,3 +102,12 @@ function lerImagem(imagem) {
 }
 
 console.log(fotoperfil);
+
+function deslogar() {
+    localStorage.removeItem("nomeUsuario");
+    window.location.replace("index.html");
+}
+
+function voltar() {
+    window.location.replace("index.html");
+}

@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'FonteGamer';
+    src: url(../fontes/Fun\ Games.ttf);
+}
+
+@font-face {
+    font-family: 'FonteComum';
+    src: url(../fontes/Gameplay.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(19, 14, 2);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#tituloGG {
+    font-size: 100px;
+    font-style: normal;
+}
+
+#titulo {
+    cursor: default;
+    text-align: center;
+    font-style: normal;
+    margin: 20px auto;
+    font-family: "FonteGamer";
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #ffcdcd;
+    text-shadow: 0 0 5px #ffd9d9, 0 0 10px #ffa7a7,
+        0 0 15px #a82f2f, 0 0 20px #3a0a0a,
+        0 0 35px #330303, 0 0 40px #240303;
+}
+
+a {
+    font-family: 'FonteComum';
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #ffffff00;
+    font-size: x-large;
+    color: #ffd5d5;
+    text-shadow: 0 0 5px #db2727, 0 0 10px #991717,
+        0 0 15px #701919, 0 0 20px #581313,
+        0 0 35px #410b0b
+}
+
+input {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #ffffff00;
+    border-radius: 5px;
+    border-bottom: 3px solid #db2727;
+    font-size: xx-large;
+    color: #ffd5d5;
+    text-shadow: 0 0 5px #db2727, 0 0 10px #991717,
+        0 0 15px #701919, 0 0 20px #581313,
+        0 0 35px #410b0b
+}
+
+input::placeholder {
+    color: #ffd5d5;
+    opacity: 0.5;
+}
+
+button {
+    cursor: pointer;
+    font-family: 'FonteComum';
+    margin: 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #ffffff00;
+    border-radius: 20px;
+    border: 3px solid #db2727;
+    font-size: xx-large;
+    color: #ffd5d5;
+    text-shadow: 0 0 5px #db2727, 0 0 10px #991717,
+        0 0 15px #701919, 0 0 20px #581313,
+        0 0 35px #410b0b;
+}
+
+button:hover {
+    border: 3px solid #ffd5d5;
+    box-shadow: 0 0 5px #e74343, 0 0 10px #b12a2a,
+        0 0 15px #8a2b2b, 0 0 20px #682020,
+        0 0 35px #571515;
+    text-shadow: 0 0 5px #e74343, 0 0 10px #b12a2a,
+        0 0 15px #8a2b2b, 0 0 20px #682020,
+        0 0 35px #571515;
+}

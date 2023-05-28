@@ -87,7 +87,7 @@ function enviarDados() {
             senha: senhauser,
             fotoperfil: "null",
             cor: "white",
-            xp: "0"
+            xp: 0
         })
     })
         .then(response => response.json())

@@ -1,3 +1,14 @@
+try {
+    var nome = JSON.parse(localStorage.getItem('nomeUsuario'))[0]
+    var fotoperfil = JSON.parse(localStorage.getItem('nomeUsuario'))[2]
+    if (fotoperfil == "null") {
+        fotoperfil = "images/user.jpg";
+    }
+    var cor = JSON.parse(localStorage.getItem('nomeUsuario'))[3]
+} catch (error) {
+    document.getElementById('mensagens').innerHTML = "<br><br><br><h2>VOCE ESTA SEM UMA CONTA!</h2><br><div align='center' style='justify-content: center'><a href='cadastro.html'>cadastre-se para mandar mensagem</a></div>"
+}
+
 //Matriz com a palavra e o tema
 var sPerguntas = [
     ["CARAMBOLA", "FRUTA"],
@@ -204,6 +215,30 @@ function acabou() {
         lAcabou = true;
         //Exibe a mensagem
         alert("PARABENS! TU GANHO KASKDJAWIOFJAWODJFOIAW");
+        if (localStorage.getItem('nomeUsuario') != null) {
+            //Incrementar XP
+            fetch(`api/usuarios?nome=${nome}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data[0].id);
+                    idUser = data[0].id;
+                    fetch(`api/usuarios/${data[0].id}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            nome: nome,
+                            senha: JSON.parse(localStorage.getItem('nomeUsuario'))[1],
+                            fotoperfil: fotoperfil,
+                            cor: cor,
+                            xp: JSON.parse(localStorage.getItem('nomeUsuario'))[4] + 50
+                        })
+                    })
+                        .then(response => response.json())
+                })
+            atualizarJson();
+        }
         iCertas++;
         //Se a quantidade de letras erradas chegou a 6
     } else if (iErro == 6) {
@@ -298,4 +333,14 @@ function shake(e, oncomplete, distance, time) {
 
 function shakeme(event1) {
     shake(event1.target);
+}
+
+function atualizarJson() {
+    fetch(`api/usuarios?nome=${nome}`)
+        .then(response => response.json())
+        .then(data => {
+            //inserir um dado local
+            localStorage.setItem("nomeUsuario", JSON.stringify([data[0].nome, data[0].senha, data[0].fotoperfil, data[0].cor, data[0].xp]));
+            console.log("funcionou");
+        })
 }

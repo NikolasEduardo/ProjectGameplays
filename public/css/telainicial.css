@@ -62,7 +62,6 @@ main>a {
 }
 
 div#conta>a {
-    font-size: 20px;
     border: none;
 }
 
@@ -120,6 +119,18 @@ a {
 #xp {
     height: 10px;
     border-radius: 5px;
+}
+
+#logincadastro {
+    color: #ffd5d5;
+    text-shadow: 0 0 5px #db2727, 0 0 10px #991717,
+        0 0 15px #701919, 0 0 20px #581313,
+        0 0 35px #410b0b;
+    text-decoration: underline;
+    margin: 15px;
+    font-weight: bold;
+    font-family: 'FonteComum';
+    letter-spacing: 1px;
 }
 
 @media (max-width: 500px) {

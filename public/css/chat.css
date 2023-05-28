@@ -45,10 +45,13 @@ body {
     justify-content: center;
     position: fixed;
     width: 100%;
-    height: 90%;
+    height: 100%;
     max-width: 1000px;
-    border-left: 20px solid #00000000;
-    border-right: 20px solid #00000000;
+    border: 20px solid #00000000;
+}
+
+#conversas {
+    height: 90%;
 }
 
 a > img {
@@ -76,9 +79,26 @@ h1 {
         0 0 35px #330303, 0 0 40px #240303;
 }
 
+h2, a {
+    text-align: center;
+    font-family: "FonteComum";
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #fff1f1;
+}
+
+a {
+    text-decoration: underline;
+    color: #ffa7a7;
+}
+
+a:hover {
+    color: #a82f2f;
+}
+
 div#mensagens {
     width: 100%;
-    height: 80vh;
+    height: 70vh;
     background: #000000de;
     overflow: auto;
     scroll-behavior: smooth;
@@ -200,5 +220,11 @@ textarea {
 
     h1 {
         font-size: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        height: 90vh;
     }
 }
