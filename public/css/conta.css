@@ -45,6 +45,7 @@ select {
     background-color: black;
     color: white;
     font-size: large;
+    cursor: pointer;
 }
 
 #perfiluser>div:not(#foto) {
@@ -80,6 +81,7 @@ button {
     padding: 10px;
     border-radius: 15px;
     background-color: black;
+    cursor: pointer;
 }
 
 @media (max-width: 500px) {

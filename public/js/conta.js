@@ -12,7 +12,7 @@ xp = ((xp % 1000) / 10);
 
 
 document.getElementById('perfiluser').style.border = `5px solid ${cor}`;
-document.getElementById('foto').src = fotoperfil;
+document.getElementById('foto').style.backgroundImage = `url(${fotoperfil})`;
 document.getElementById('nomeperfil').innerHTML += `${nome}<br>Level ${level}`;
 document.getElementById('xp').style.backgroundColor = `${cor}`;
 document.getElementById('xp').style.width = `${xp}%`;
@@ -35,20 +35,33 @@ function mudarCor() {
 }
 
 function atualizarDados() {
-    fetch(`${jsonuser}?nome=${nome}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            nome: nome,
-            senha: senha,
-            fotoperfil: fotoperfil,
-            cor: cor,
-            xp: JSON.parse(localStorage.getItem('nomeUsuario'))[4]
-        })
-    })
+    fetch(`${jsonuser}?nome=${nome}`)
         .then(response => response.json())
+        .then(data => {
+            console.log(data[0].id);
+            idUser = data[0].id;
+            fetch(`${jsonuser}/${data[0].id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    nome: nome,
+                    senha: senha,
+                    fotoperfil: fotoperfil,
+                    cor: cor,
+                    xp: JSON.parse(localStorage.getItem('nomeUsuario'))[4]
+                })
+            })
+                .then(response => response.json())
+        })
+    fetch(`${jsonuser}?nome=${nome}`)
+        .then(response => response.json())
+        .then(data => {
+            //inserir um dado local
+            localStorage.setItem("nomeUsuario", JSON.stringify([data[0].nome, data[0].senha, data[0].fotoperfil, data[0].cor, data[0].xp]));
+            console.log("funcionou");
+        })
 }
 
 //Função para reduzir a qualidade da imagem e redimensionar para w:100px h:100px
