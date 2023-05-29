@@ -37,7 +37,7 @@ document.querySelector('form').addEventListener('submit', evento => {
                         } else {
                             alert("permitido")
                             enviarDados()
-                            localStorage.setItem("nomeUsuario", JSON.stringify([username, senhauser, "images/user.jpg", "white", "0"]));
+                            localStorage.setItem("nomeUsuario", JSON.stringify([username, senhauser, "images/user.jpg", "white", 0]));
                             window.location.replace("index.html");
                         }
                     } else {
