@@ -1,0 +1,278 @@
+@font-face {
+    font-family: 'FonteGamer';
+    src: url(../fontes/Fun\ Games.ttf);
+}
+
+@font-face {
+    font-family: 'FonteComum';
+    src: url(../fontes/Gameplay.ttf);
+}
+
+body {
+    background: rgb(19, 14, 2);
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    cursor: default;
+    text-align: center;
+    font-style: normal;
+    margin: 20px auto;
+    font-family: "FonteGamer";
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #ffcdcd;
+    text-shadow: 0 0 5px #ffd9d9, 0 0 10px #ffa7a7,
+        0 0 15px #a82f2f, 0 0 20px #3a0a0a,
+        0 0 35px #330303, 0 0 40px #240303;
+}
+
+a {
+    font-family: "FonteComum";
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #b10c0c 0%, #a71818 50%, #791515 50%, #350a0a);
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    box-shadow:
+        0px 1px 3px rgba(000, 000, 000, 0.5),
+        inset 0px 0px 2px rgba(255, 255, 255, 1);
+    text-shadow:
+        0px -1px 0px rgba(000, 000, 000, 0.2) 0px 1px 0px rgba(255, 255, 255, 1);
+}
+
+input {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #ffffff00;
+    border-radius: 5px;
+    border-bottom: 3px solid #db2727;
+    font-size: xx-large;
+    color: #ffd5d5;
+    text-shadow: 0 0 5px #db2727, 0 0 10px #991717,
+        0 0 15px #701919, 0 0 20px #581313,
+        0 0 35px #410b0b
+}
+
+input::placeholder {
+    color: #ffd5d5;
+    opacity: 0.5;
+}
+
+button {
+    cursor: pointer;
+    font-family: 'FonteComum';
+    margin: 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #ffffff00;
+    border-radius: 20px;
+    border: 3px solid #db2727;
+    font-size: xx-large;
+    color: #ffd5d5;
+    text-shadow: 0 0 5px #db2727, 0 0 10px #991717,
+        0 0 15px #701919, 0 0 20px #581313,
+        0 0 35px #410b0b;
+}
+
+button:hover {
+    border: 3px solid #ffd5d5;
+    box-shadow: 0 0 5px #e74343, 0 0 10px #b12a2a,
+        0 0 15px #8a2b2b, 0 0 20px #682020,
+        0 0 35px #571515;
+    text-shadow: 0 0 5px #e74343, 0 0 10px #b12a2a,
+        0 0 15px #8a2b2b, 0 0 20px #682020,
+        0 0 35px #571515;
+}
+
+#filmes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#filmes>p {
+    margin: 30px;
+    font-size: 40px;
+}
+
+strong {
+    font-weight: normal;
+}
+
+i {
+    font-style: normal;
+    text-decoration: overline;
+    font-size: 25px;
+}
+
+@font-face {
+    font-family: "aescolhaperfeita";
+    src: url(../fontes-filmes/aescolhaperfeita/compacta-bold-bt.ttf);
+}
+
+p#escolha {
+    font-family: "aescolhaperfeita";
+    text-transform: uppercase;
+}
+
+@font-face {
+    font-family: "ahoradorush";
+    src: url(../fontes-filmes/ahoradorush/AnyConv.com__OPTIAlpine-BoldItalic.ttf);
+}
+
+p#rush {
+    font-family: "ahoradorush";
+    text-align: left;
+}
+
+
+@font-face {
+    font-family: "barbie";
+    src: url(../fontes-filmes/barbie/HelloSundayDEMO.ttf);
+}
+
+p#barbie {
+    font-family: "barbie";
+    font-size: 50px;
+    font-weight: 600;
+}
+
+
+@font-face {
+    font-family: "devoltaprofuturo";
+    src: url(../fontes-filmes/devoltaprofuturo/Benjor\ Italic.ttf);
+}
+
+p#futuro {
+    font-family: "devoltaprofuturo";
+    text-transform: uppercase;
+    text-align: left;
+}
+
+
+@font-face {
+    font-family: "fabricadechocolate";
+    src: url(../fontes-filmes/fabricadechocolate/Groovadelic\ NF\ W01\ Regular.ttf);
+}
+
+p#chocolate {
+    font-family: "fabricadechocolate";
+    text-align: end;
+}
+
+
+@font-face {
+    font-family: "gatodebotas";
+    src: url(../fontes-filmes/gatodebotas/BelweMediumBT.ttf);
+}
+
+p#gatobotas {
+    font-family: "gatodebotas";
+}
+
+
+@font-face {
+    font-family: "magicodeoz";
+    src: url(../fontes-filmes/magicodeoz/NCS\ Radhiumz\ Bold\ Shadow.ttf);
+}
+
+p#oz {
+    font-family: "magicodeoz";
+}
+
+
+@font-face {
+    font-family: "passadomecondena";
+    src: url(../fontes-filmes/meupassadomecondena/FuturaTSNew.ttf);
+}
+
+p#passado {
+    font-family: "passadomecondena";
+    text-transform: uppercase;
+}
+
+
+@font-face {
+    font-family: "vesteprada";
+    src: url(../fontes-filmes/odjabovesteprada/Garamond-Roman\ Light.ttf);
+}
+
+p#djabo {
+    font-family: "vesteprada";
+    text-transform: uppercase;
+}
+
+
+@font-face {
+    font-family: "lobodewall";
+    src: url(../fontes-filmes/olobodewallstreet/zeitung-pro-semibold.otf);
+}
+
+p#lobo {
+    font-family: "lobodewall";
+    text-transform: uppercase;
+}
+
+
+@font-face {
+    font-family: "onzehomens";
+    src: url(../fontes-filmes/onzehomenseumsegredo/etrusconowcondensed-black.otf);
+}
+
+p#onzehomens {
+    font-family: "onzehomens";
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+
+@font-face {
+    font-family: "macacos";
+    src: url(../fontes-filmes/planetadosmamacos/Restore\ W00\ Black.ttf);
+}
+
+p#macacos {
+    font-family: "macacos";
+    text-transform: uppercase;
+}
+
+
+@font-face {
+    font-family: "poderosochefao";
+    src: url(../fontes-filmes/poderosochefao/MACBT.ttf);
+}
+
+p#chefao {
+    font-family: "poderosochefao";
+    text-transform: uppercase;
+    text-align: left;
+}
+
+
+@font-face {
+    font-family: "nemo";
+    src: url(../fontes-filmes/procurandonemo/humanist-521-ultra-bold.otf);
+}
+
+p#nemo {
+    font-family: "nemo";
+    text-transform: uppercase;
+}
+
+
+@font-face {
+    font-family: "reileao";
+    src: url(../fontes-filmes/reileao/Transcend\ Black.otf);
+}
+
+p#reileao {
+    font-family: "reileao";
+    text-transform: uppercase;
+}

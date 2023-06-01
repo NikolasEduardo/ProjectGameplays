@@ -12,6 +12,21 @@
     width: 0px;
 }
 
+a {
+    font-family: "FonteComum";
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #b10c0c 0%, #a71818 50%, #791515 50%, #350a0a);
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    box-shadow:
+        0px 1px 3px rgba(000, 000, 000, 0.5),
+        inset 0px 0px 2px rgba(255, 255, 255, 1);
+    text-shadow:
+        0px -1px 0px rgba(000, 000, 000, 0.2) 0px 1px 0px rgba(255, 255, 255, 1);
+}
+
 #titulo {
     text-align: center;
     margin: 20px auto;
@@ -27,6 +42,9 @@
 body {
     background: rgb(19, 14, 2);
     margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 #tudodentro {
@@ -144,7 +162,55 @@ input[type=button]:hover {
         flex-direction: column;
         margin-bottom: 50px;
     }
+
+    #resultado {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 650px) {
     #jogo {
-        
+        width: 450px;
+        height: 450px;
+    }
+
+    .linha {
+        height: 149px;
+    }
+
+    .casa {
+        width: 148px;
+        height: 100%;
+    }
+
+    .casa>img {
+        width: 140px;
+    }
+}
+
+@media (max-width: 500px) {
+    #jogo {
+        width: 300px;
+        height: 300px;
+    }
+
+    .linha {
+        height: 99px;
+    }
+
+    .casa {
+        width: 98px;
+        height: 100%;
+    }
+
+    .casa>img {
+        width: 90px;
+    }
+
+    input[type=button],
+    input[type=submit],
+    input[type=reset] {
+        font-size: 30px;
+        padding: 30px;
     }
 }

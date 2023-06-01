@@ -119,16 +119,18 @@ input {
 }
 
 a {
-    text-align: left;
-    margin: 5px auto;
     font-family: "FonteComum";
-    font-size: 30px;
-    text-transform: uppercase;
-    color: #ffd5d5;
-    text-shadow: 0 0 5px #db2727, 0 0 10px #991717,
-        0 0 15px #701919, 0 0 20px #581313,
-        0 0 35px #410b0b, 0 0 40px #1f0606,
-        0 0 50px #130101, 0 0 75px #000000;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #b10c0c 0%, #a71818 50%, #791515 50%, #350a0a);
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    box-shadow:
+        0px 1px 3px rgba(000, 000, 000, 0.5),
+        inset 0px 0px 2px rgba(255, 255, 255, 1);
+    text-shadow:
+        0px -1px 0px rgba(000, 000, 000, 0.2) 0px 1px 0px rgba(255, 255, 255, 1);
 }
 
 #palcerta {

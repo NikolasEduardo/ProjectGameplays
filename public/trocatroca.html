@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Troca-Troca Palavras</title>
+    <link rel="stylesheet" href="css/trocatroca.css">
+</head>
+
+<body align="center">
+    <h1>Troca-Troca Palavras</h1>
+    <br>
+    <a href="index.html">Voltar</a>
+    <br>
+    <br>
+    <form>
+        <input type="text" id="palavra" placeholder="Digite uma palavra" />
+        <br>
+        <button onclick="muda_palavra(event)">Jogar</button>
+    </form>
+    <br>
+
+    <div id="filmes">
+        <p id="rush">A hora<br> do <strong>Rush</strong></p>
+        <p id="oz">O <strong>Mágico</strong><br> de OZ</p>
+        <p id="onzehomens">onze homens <br> e um <strong>segredo</strong></p>
+        <p id="macacos"><strong>Planeta</strong><br> dos Macacos</p>
+        <p id="nemo">Procurando <br><strong>Nemo</strong></p>
+        <p id="gatobotas">Gato de <strong>Botas</strong></p>
+        <p id="passado">Meu <strong>passado</strong> me <br> condena</p>
+        <p id="barbie">Barbie <br> e o <strong>segredo</strong> das fadas</p>
+        <p id="reileao">O <br> Rei <strong>Leão</strong></p>
+        <p id="futuro">De <strong>Volta<br></strong> para o Futuro</p>
+        <p id="chocolate">A Fantástica <br>Fábrica de <br><strong>Chocolate</strong></p>
+        <p id="chefao">O<br>Poderoso <strong>Chefão</strong></p>
+        <p id="escolha">A <strong>Escolha</strong> <br> Perfeita</p>
+        <p id="djabo">O <br> Diabo <br> Veste <br><strong>Prada</strong></p>
+        <p id="lobo">O <strong>Lobo</strong><br> de Wall Street</p>
+    </div>
+
+    <br><br>
+
+    <script>
+        function muda_palavra(event) {
+            event.preventDefault();
+            palavra = document.getElementsByTagName('strong');
+            nova_palavra = document.getElementById('palavra').value;
+
+            for (x = 0; x < palavra.length; x++) {
+                palavra[x].innerHTML = nova_palavra;
+            }
+        }
+    </script>
+</body>
+
+</html>

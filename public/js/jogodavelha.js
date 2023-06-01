@@ -95,7 +95,7 @@ function confere() {
         //muda a cor da letra
         document.getElementById("resposta").style.color="#ffc400";
         //muda o tamanho do texto
-        document.getElementById("resposta").style.fontSize="xx-large";
+        document.getElementById("resposta").style.fontSize="x-large";
         //window.confirm(sResposta);
     }
 }
