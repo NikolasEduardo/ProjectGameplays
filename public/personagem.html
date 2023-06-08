@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -12,45 +12,117 @@
 <body align="center">
     <h1>Customize Seu Personagem</h1>
     <br>
-    <a href="index.html">Voltar</a>
-    <br><br><br>
-    <div id="personagem">
-        <div>
-            <div>
-                <div></div>
-            </div>
+    <a href="index.html" onclick="salvarPersona()">Voltar e Salvar</a>
+    <br>
+    <div id="customizacao">
+        <div id="personagem">
+            <div id="corpo"></div>
+            <div id="cabelo"></div>
+            <div id="chapeu"></div>
+        </div>
+        <br>
+        <div id="opcoes">
+            <fieldset>
+                <legend>Personagem</legend>
+                <p>
+                    <button onclick="trocarPersona('antePersonagem')">◀</button>
+                    <label id="personagens">Cachorro</label>
+                    <button onclick="trocarPersona('proxPersonagem')">▶</button>
+                </p>
+                <p>
+                    <label>Fundo:</label>
+                    <input type="color" id="corFundo" onchange="mudarFundo()"/>
+                </p>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Corpo</legend>
+                <p>
+                    <button onclick="trocarPersona('antePelagem')">◀</button>
+                    <label id="pelagem">Pelagem 1</label>
+                    <button onclick="trocarPersona('proxPelagem')">▶</button>
+                </p>
+                <p>
+                    <button onclick="trocarEstilo('ante', 'escalacinza', 'corpo')">◀</button>
+                    <label id="cinza1">Escala Cinza</label>
+                    <button onclick="trocarEstilo('prox', 'escalacinza', 'corpo')">▶</button>
+                </p>
+                <p>
+                    <button onclick="trocarEstilo('ante', 'cor', 'corpo')">◀</button>
+                    <label id="cor1">Cor</label>
+                    <button onclick="trocarEstilo('prox', 'cor', 'corpo')">▶</button>
+                </p>
+                <p>
+                    <button onclick="trocarEstilo('ante', 'inverter', 'corpo')">◀</button>
+                    <label id="invert1">Inverter</label>
+                    <button onclick="trocarEstilo('prox', 'inverter', 'corpo')">▶</button>
+                </p>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Cabelo</legend>
+                <p>
+                    <button onclick="trocarCabelo('anteTipo')">◀</button>
+                    <label id="tipo">Tipo 1</label>
+                    <button onclick="trocarCabelo('proxTipo')">▶</button>
+                </p>
+                <p>
+                    <button onclick="trocarCabelo('anteColor')">◀</button>
+                    <label id="color">Coloração 3</label>
+                    <button onclick="trocarCabelo('proxColor')">▶</button>
+                </p>
+                <p>
+                    <button onclick="trocarEstilo('ante', 'luminosidade', 'cabelo')">◀</button>
+                    <label id="lumi2">Luminosidade</label>
+                    <button onclick="trocarEstilo('prox', 'luminosidade', 'cabelo')">▶</button>
+                </p>
+                <p>
+                    <button onclick="trocarEstilo('ante', 'escalacinza', 'cabelo')">◀</button>
+                    <label id="cinza2">Escala Cinza</label>
+                    <button onclick="trocarEstilo('prox', 'escalacinza', 'cabelo')">▶</button>
+                </p>
+                <p>
+                    <button onclick="trocarEstilo('ante', 'cor', 'cabelo')">◀</button>
+                    <label id="cor2">Cor</label>
+                    <button onclick="trocarEstilo('prox', 'cor', 'cabelo')">▶</button>
+                </p>
+                <p>
+                    <button onclick="trocarEstilo('ante', 'inverter', 'cabelo')">◀</button>
+                    <label id="invert2">Inverter</label>
+                    <button onclick="trocarEstilo('prox', 'inverter', 'cabelo')">▶</button>
+                </p>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Chapeu</legend>
+                <p>
+                    <button onclick="trocarChapeu('ante')">◀</button>
+                    <label id="chapeus">Capacete</label>
+                    <button onclick="trocarChapeu('prox')">▶</button>
+                </p>
+                <p>
+                    <button onclick="trocarEstilo('ante', 'luminosidade', 'chapeu')">◀</button>
+                    <label id="lumi3">Luminosidade</label>
+                    <button onclick="trocarEstilo('prox', 'luminosidade', 'chapeu')">▶</button>
+                </p>
+                <p>
+                    <button onclick="trocarEstilo('ante', 'escalacinza', 'chapeu')">◀</button>
+                    <label id="cinza3">Escala Cinza</label>
+                    <button onclick="trocarEstilo('prox', 'escalacinza', 'chapeu')">▶</button>
+                </p>
+                <p>
+                    <button onclick="trocarEstilo('ante', 'cor', 'chapeu')">◀</button>
+                    <label id="cor3">Cor</label>
+                    <button onclick="trocarEstilo('prox', 'cor', 'chapeu')">▶</button>
+                </p>
+                <p>
+                    <button onclick="trocarEstilo('ante', 'inverter', 'chapeu')">◀</button>
+                    <label id="invert3">Inverter</label>
+                    <button onclick="trocarEstilo('prox', 'inverter', 'chapeu')">▶</button>
+                </p>
+            </fieldset>
         </div>
     </div>
-    <div id="opcoes">
-        <fieldset>
-            <legend>Personagem</legend>
-            <button>◀</button>
-            <label>Persona</label>
-            <button>▶</button>
-        </fieldset>
-        <br>
-        <fieldset>
-            <legend>Pelagem</legend>
-            <button>◀</button>
-            <label>Cor</label>
-            <button>▶</button>
-        </fieldset>
-        <br>
-        <fieldset>
-            <legend>Cabelo</legend>
-            <button>◀</button>
-            <label>Cabelo</label>
-            <button>▶</button>
-        </fieldset>
-        <br>
-        <fieldset>
-            <legend>Chapeu</legend>
-            <button>◀</button>
-            <label>Chapeu</label>
-            <button>▶</button>
-        </fieldset>
-        <br>
-    </div>
 </body>
-
+<script src="js/personagem.js"></script>
 </html>

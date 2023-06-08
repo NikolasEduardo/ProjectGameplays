@@ -11,8 +11,15 @@
 body {
     background: rgb(19, 14, 2);
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 0;
     margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 h1 {
@@ -21,7 +28,7 @@ h1 {
     font-style: normal;
     margin: 20px auto;
     font-family: "FonteGamer";
-    font-size: 70px;
+    font-size: 60px;
     text-transform: uppercase;
     color: #ffcdcd;
     text-shadow: 0 0 5px #ffd9d9, 0 0 10px #ffa7a7,
@@ -44,40 +51,68 @@ a {
         0px -1px 0px rgba(000, 000, 000, 0.2) 0px 1px 0px rgba(255, 255, 255, 1);
 }
 
+div#customizacao {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 div#personagem {
     width: 400px;
     height: 400px;
     background-position: center;
     background-size: cover;
     background-color: #ffa7a7;
+    position: relative;
+    border-radius: 15px;
 }
 
-div#personagem> div {
+div#personagem> :nth-child(1) {
     width: 100%;
     height: 100%;
+    position: absolute;
     background-size: cover;
-    background-image: url("../images/customizar/Personagens/Cachorro/3.png");
-    filter: brightness(100%) contrast(100%) grayscale(0%) hue-rotate(10deg) invert(0%) saturate(100%) sepia(0%);
 }
 
-div#personagem> div > div {
+div#personagem> :nth-child(2) {
     width: 100%;
     height: 100%;
+    position: absolute;
     background-size: cover;
-    background-image: url("../images/customizar/Cabelos/Cabelo1/1.png");
-    filter: brightness(50%) contrast(100%) grayscale(90%) hue-rotate(90deg) invert(0%) saturate(100%) sepia(50%);
 }
 
-div#personagem> div > div > div {
+div#personagem> :nth-child(3) {
     width: 100%;
     height: 100%;
+    position: absolute;
     background-size: cover;
-    background-image: url("../images/customizar/Chapéus/2.png");
-    filter: brightness(10%) contrast(100%) grayscale(10%) hue-rotate(90deg) invert(100%) saturate(100%) sepia(0%);
 }
 
-legend,
-label {
+#opcoes {
+    width: 70%;
+    min-width: 400px;
+    max-width: 600px;
+    padding: 5px;
+    height: 400px;
+    overflow-y: scroll;
+    border: 2px white solid;
+    border-radius: 15px;
+}
+
+fieldset {
+    padding: 10px 80px;
+    border-radius: 15px;
+}
+
+fieldset>p {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+legend {
     font-family: 'FonteComum';
     cursor: default;
 }
@@ -87,7 +122,13 @@ legend {
 }
 
 label {
-    font-size: 20px;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+input[type="color"] {
+    width: 50%;
+    height: 40px;
 }
 
 button {
@@ -103,4 +144,41 @@ button {
         inset 0px 0px 2px rgba(255, 255, 255, 1);
     text-shadow:
         0px -1px 0px rgba(000, 000, 000, 0.2) 0px 1px 0px rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 1030px) {
+    div#customizacao {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #opcoes {
+        height: 40vh;
+        border: 2px white solid;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 650px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    div#personagem {
+        width: 350px;
+        height: 350px;
+    }
+
+    div#customizacao {
+        width: 95%;
+    }
+
+    #opcoes {
+        width: 100%;
+    }
+
+    fieldset {
+        padding: 10px 30px;
+    }
 }
