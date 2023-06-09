@@ -1,46 +1,73 @@
-fundoPersonagem = "#ffa7a7";
+try {
+    console.log(JSON.parse(localStorage.getItem('perfilPersonagem'))[0]);
+    fundoPersonagem = JSON.parse(localStorage.getItem('perfilPersonagem'))[1];
+    corpoPersona = JSON.parse(localStorage.getItem('perfilPersonagem'))[2];
+    pelagem = JSON.parse(localStorage.getItem('perfilPersonagem'))[3];
+    tipoCabelo = JSON.parse(localStorage.getItem('perfilPersonagem'))[4];
+    coloracaoCabelo = JSON.parse(localStorage.getItem('perfilPersonagem'))[5];
+    tipoChapeu = JSON.parse(localStorage.getItem('perfilPersonagem'))[6];
+    brilhoCabelo = JSON.parse(localStorage.getItem('perfilPersonagem'))[7];
+    brilhoChapeu = JSON.parse(localStorage.getItem('perfilPersonagem'))[8];
+    grayscaleCabelo = JSON.parse(localStorage.getItem('perfilPersonagem'))[9];
+    grayscaleChapeu = JSON.parse(localStorage.getItem('perfilPersonagem'))[10];
+    grayscaleCorpo = JSON.parse(localStorage.getItem('perfilPersonagem'))[11];
+    hueRotateCabelo = JSON.parse(localStorage.getItem('perfilPersonagem'))[12];
+    hueRotateChapeu = JSON.parse(localStorage.getItem('perfilPersonagem'))[13];
+    hueRotateCorpo = JSON.parse(localStorage.getItem('perfilPersonagem'))[14];
+    invertCabelo = JSON.parse(localStorage.getItem('perfilPersonagem'))[15];
+    invertChapeu = JSON.parse(localStorage.getItem('perfilPersonagem'))[16];
+    invertCorpo = JSON.parse(localStorage.getItem('perfilPersonagem'))[17];
+} catch (error) {
+    fundoPersonagem = "#ffa7a7";
+    corpoPersona = 0;
+    pelagem = 1;
+    tipoCabelo = 0;
+    coloracaoCabelo = 1;
+    tipoChapeu = 0;
+    brilhoCabelo = 9;
+    brilhoChapeu = 9;
+    grayscaleCabelo = 0;
+    grayscaleChapeu = 0;
+    grayscaleCorpo = 0;
+    hueRotateCabelo = 0;
+    hueRotateChapeu = 0;
+    hueRotateCorpo = 0;
+    invertCabelo = 0;
+    invertChapeu = 0;
+    invertCorpo = 0;
+}
+
 document.getElementById('corFundo').value = fundoPersonagem;
 
 custPersona = document.getElementById('corpo');
 personagens = ["Cachorro", "Gato", "Coelho"];
-corpoPersona = 0;
-pelagem = 1;
+
 
 custCabelo = document.getElementById('cabelo');
-tipoCabelo = 0;
-coloracaoCabelo = 1;
+
 
 custChapeu = document.getElementById('chapeu');
 chapeus = ['Nenhum', 'Chapéu', 'Boné',
     'Cartola', 'Astronauta', 'Deku Dark'];
-tipoChapeu = 0;
 //---------------------------------------------
 brilho = ['10%', '20%', '30%', '40%', '50%',
     '60%', '70%', '80%', '90%', '100%'];
 
-brilhoCabelo = 9;
-brilhoChapeu = 9;
+
 //---------------------------------------------
 grayscale = ['0%', '10%', '20%', '30%', '40%', '50%',
     '60%', '70%', '80%', '90%', '100%'];
 
-grayscaleCabelo = 0;
-grayscaleChapeu = 0;
-grayscaleCorpo = 0;
+
 //---------------------------------------------
 hueRotate = ['0deg', '30deg', '60deg', '120deg',
     '180deg', '210deg', '240deg', '270deg',
     '300deg', '330deg'];
 
-hueRotateCabelo = 0;
-hueRotateChapeu = 0;
-hueRotateCorpo = 0;
+
 //---------------------------------------------
-invert = ['0%', '20%', '40%',
-    '60%', '80%', '100%'];
-invertCabelo = 0;
-invertChapeu = 0;
-invertCorpo = 0;
+invert = ['0%', '100%'];
+
 //---------------------------------------------
 
 
@@ -266,39 +293,39 @@ function trocarEstilo(valor, estilo, alterar) {
                 case "corpo":
                     if (valor == "prox") {
                         invertCorpo++;
-                        if (invertCorpo == 6) {
+                        if (invertCorpo == 2) {
                             invertCorpo = 0;
                         }
                     } else {
                         invertCorpo--;
                         if (invertCorpo == -1) {
-                            invertCorpo = 5;
+                            invertCorpo = 1;
                         }
                     }
                     break;
                 case "cabelo":
                     if (valor == "prox") {
                         invertCabelo++;
-                        if (invertCabelo == 6) {
+                        if (invertCabelo == 2) {
                             invertCabelo = 0;
                         }
                     } else {
                         invertCabelo--;
                         if (invertCabelo == -1) {
-                            invertCabelo = 5;
+                            invertCabelo = 1;
                         }
                     }
                     break;
                 case "chapeu":
                     if (valor == "prox") {
                         invertChapeu++;
-                        if (invertChapeu == 6) {
+                        if (invertChapeu == 2) {
                             invertChapeu = 0;
                         }
                     } else {
                         invertChapeu--;
                         if (invertChapeu == -1) {
-                            invertChapeu = 5;
+                            invertChapeu = 1;
                         }
                     }
                     break;
@@ -348,3 +375,85 @@ function mudarFundo() {
 }
 
 mudarFundo();
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function aleatorio() {
+    document.getElementById('corFundo').value = getRandomColor();
+
+    corpoPersona = Math.floor(getRandomArbitrary(0, 3)) // 0 - 3
+    pelagem = Math.floor(getRandomArbitrary(1, 6)) // 1 - 6
+
+    tipoCabelo = Math.floor(getRandomArbitrary(0, 11)) // 0 - 11
+    coloracaoCabelo = Math.floor(getRandomArbitrary(1, 5)) // 1 - 5
+
+    tipoChapeu = Math.floor(getRandomArbitrary(0, 6)) // 0 - 6
+
+    brilhoChapeu = Math.floor(getRandomArbitrary(0, 10)) // 0 - 10
+    brilhoCabelo = Math.floor(getRandomArbitrary(0, 10)) // 0 - 10
+
+    grayscaleCorpo = Math.floor(getRandomArbitrary(0, 10)) // 0 - 10
+    grayscaleCabelo = Math.floor(getRandomArbitrary(0, 10)) // 0 - 10
+    grayscaleChapeu = Math.floor(getRandomArbitrary(0, 10)) // 0 - 10
+
+    hueRotateCorpo = Math.floor(getRandomArbitrary(0, 10)) // 0 - 10
+    hueRotateCabelo = Math.floor(getRandomArbitrary(0, 10)) // 0 - 10
+    hueRotateChapeu = Math.floor(getRandomArbitrary(0, 10)) // 0 - 10
+
+    invertCorpo = Math.floor(getRandomArbitrary(0, 2)) // 0 - 6
+    invertCabelo = Math.floor(getRandomArbitrary(0, 2)) // 0 - 6
+    invertChapeu = Math.floor(getRandomArbitrary(0, 2)) // 0 - 6
+
+    trocarPersona();
+    trocarCabelo();
+    trocarChapeu();
+    trocarEstilo();
+    mudarFundo();
+}
+
+
+function salvarPersona() {
+    localStorage.setItem("perfilPersonagem",
+        JSON.stringify([
+            `\n<div id=\"foto\" style='background-color: ${fundoPersonagem};'>
+                ${document.getElementById('personagem').innerHTML}\n
+               </div>`,
+            fundoPersonagem,
+            corpoPersona,
+            pelagem,
+            tipoCabelo,
+            coloracaoCabelo,
+            tipoChapeu,
+            brilhoCabelo,
+            brilhoChapeu,
+            grayscaleCabelo,
+            grayscaleChapeu,
+            grayscaleCorpo,
+            hueRotateCabelo,
+            hueRotateChapeu,
+            hueRotateCorpo,
+            invertCabelo,
+            invertChapeu,
+            invertCorpo
+        ]));
+
+    localStorage.setItem("nomeUsuario",
+    JSON.stringify([
+        JSON.parse(localStorage.getItem('nomeUsuario'))[0],
+        JSON.parse(localStorage.getItem('nomeUsuario'))[1],
+        JSON.parse(localStorage.getItem('perfilPersonagem'))[0],
+        JSON.parse(localStorage.getItem('nomeUsuario'))[3],
+        JSON.parse(localStorage.getItem('nomeUsuario'))[4]
+    ]))
+}

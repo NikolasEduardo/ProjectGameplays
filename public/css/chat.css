@@ -23,11 +23,17 @@ a {
     text-decoration: none;
 }
 
+button {
+    background-color: #00000000;
+    border: none;
+    cursor: pointer;
+}
+
 a:hover {
     color: rgb(252, 147, 147);
 }
 
-textarea::-webkit-scrollbar {
+::-webkit-scrollbar {
     display: none;
 }
 
@@ -41,13 +47,77 @@ body {
 
 #app {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
+    width: 98%;
+    height: 100%;
+    border: 20px solid #00000000;
+}
+
+div#grupos {
+    width: 25%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: rgb(71, 0, 0);
+    overflow-y: auto;
+}
+
+a#linksgrupos {
+    display: block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #240303;
+    width: 90%;
+    padding: 5px 0px;
+    border-radius: 10px;
+}
+
+a#linksgrupos:hover {
+    background-color: #ffa7a7b7;
+    color: #240303;
+}
+
+hr {
+    margin: 20px;
+}
+
+div.conversas {
+    width: 73%;
+    overflow-y: auto;
+}
+
+div#foto {
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    border-radius: 150px;
+}
+
+div#foto> div#corpo {
     width: 100%;
     height: 100%;
-    max-width: 1000px;
-    border: 20px solid #00000000;
+    position: absolute;
+    background-size: cover;
+    border-radius: 150px;
+}
+
+div#foto> div#cabelo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    border-radius: 150px;
+}
+
+div#foto> div#chapeu {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    border-radius: 150px;
 }
 
 #conversas {
@@ -87,12 +157,12 @@ h2, a {
     color: #fff1f1;
 }
 
-a {
+a:not(a#linksgrupos) {
     text-decoration: underline;
     color: #ffa7a7;
 }
 
-a:hover {
+a:hover:not(a#linksgrupos) {
     color: #a82f2f;
 }
 
@@ -108,24 +178,23 @@ div#mensagens::-webkit-scrollbar {
     width: 5px;
 }
 
-div#mensagens>div {
+div#mensagens>div:not(div#foto) {
     display: flex;
     padding: 10px;
 }
 
-div#mensagens>div>div {
+div#mensagens>div>div:not(div#foto) {
     max-width: 80%;
     background: rgba(255, 255, 255, 0.13);
     color: white;
-    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0, 0.05);
     padding: 10px;
 }
 
-div#mensagens>div#usuario>div {
+div#mensagens>div#usuario>div:not(div#foto) {
     border: solid 2px rgb(0, 238, 255);
 }
 
-div#mensagens>div#outro>div {
+div#mensagens>div#outro>div:not(div#foto) {
     border: solid 2px red;
 }
 
@@ -141,11 +210,11 @@ div#mensagens div .text {
     word-wrap: break-word;
 }
 
-div#outro>div {
+div#outro>div:not(div#foto) {
     border-radius: 0px 15px 15px 15px;
 }
 
-div#usuario>div {
+div#usuario>div:not(div#foto) {
     text-align: right;
     border-radius: 15px 0px 15px 15px;
 }

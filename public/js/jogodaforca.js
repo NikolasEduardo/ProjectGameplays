@@ -6,7 +6,7 @@ try {
     }
     var cor = JSON.parse(localStorage.getItem('nomeUsuario'))[3]
 } catch (error) {
-    document.getElementById('mensagens').innerHTML = "<br><br><br><h2>VOCE ESTA SEM UMA CONTA!</h2><br><div align='center' style='justify-content: center'><a href='cadastro.html'>cadastre-se para mandar mensagem</a></div>"
+    alert('Esse jogo oferece ganho de XP, recomendo que conecte-se em uma Conta')
 }
 
 //Matriz com a palavra e o tema
@@ -336,11 +336,13 @@ function shakeme(event1) {
 }
 
 function atualizarJson() {
-    fetch(`api/usuarios?nome=${nome}`)
-        .then(response => response.json())
-        .then(data => {
-            //inserir um dado local
-            localStorage.setItem("nomeUsuario", JSON.stringify([data[0].nome, data[0].senha, data[0].fotoperfil, data[0].cor, data[0].xp]));
-            console.log("funcionou");
-        })
+    setTimeout(function () {
+        fetch(`api/usuarios?nome=${nome}`)
+            .then(response => response.json())
+            .then(data => {
+                //inserir um dado local
+                localStorage.setItem("nomeUsuario", JSON.stringify([data[0].nome, data[0].senha, data[0].fotoperfil, data[0].cor, data[0].xp]));
+                console.log("funcionou");
+            })
+    }, 1000)
 }

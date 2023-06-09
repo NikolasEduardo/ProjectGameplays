@@ -21,13 +21,37 @@ body {
     padding: 20px;
 }
 
-#foto {
-    border-radius: 100px;
+div#foto {
     width: 200px;
     height: 200px;
-    background-size: contain;
     background-position: center;
-    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 150px;
+}
+
+div#foto> div#corpo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    border-radius: 150px;
+}
+
+div#foto> div#cabelo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    border-radius: 150px;
+}
+
+div#foto> div#chapeu {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    border-radius: 150px;
 }
 
 input[type="file"] {

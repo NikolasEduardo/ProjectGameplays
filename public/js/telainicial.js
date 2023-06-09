@@ -11,17 +11,23 @@ level = (`${xp/1000}`).split(".")[0];
 xp = ((xp%1000)/10);
 
 if (localStorage.getItem('nomeUsuario') != null) {
-    conta.innerHTML = `<a href="conta.html">
-    <div id="perfiluser" style="border: 5px solid ${cor};">
-        <img src="${imagem}" id="foto">
-        <div>
-            <div id="nomeperfil">${nome}<br>Level ${level}:</div>
-            <div id="level">
-                <div id="xp" style="background-color: ${cor}; width: ${xp}%;"></div>
+    conta.innerHTML = `
+    <a href="conta.html">
+        <div id="perfiluser" style="border: 5px solid ${cor};">
+            <div id="foto">
+                ${JSON.parse(localStorage.getItem('perfilPersonagem'))[0]}
             </div>
+                <div>
+                    <div>
+                         <div id="nomeperfil">${nome}<br>Level ${level}:</div>
+                        <div id="level">
+                            <div id="xp" style="background-color: ${cor}; width: ${xp}%;"></div>
+                        </div>
+                    </div>
+                </div>
         </div>
-    </div>
-</a>`
+    </a>
+    `
 } else {
     console.log("não tem login");
 }
