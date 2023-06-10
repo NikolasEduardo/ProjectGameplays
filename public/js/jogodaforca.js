@@ -134,10 +134,10 @@ function criaLetras(sPalavra) {
 }
 //****************************************************************************/
 document.addEventListener('keydown', function (event) {
+    console.log("clicou a tecla " + event.key);
     for (let x = 0; x < sLetras.length; x++) {
         if (event.key == sLetras[x].toLowerCase()) {
             if (!(document.getElementById(sLetras[x]).disabled || event.key == "-")) {
-                console.log("clicou a tecla " + event.key);
                 Confere(sLetras[x])
                 acabou()
             }

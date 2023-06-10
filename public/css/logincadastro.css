@@ -98,3 +98,15 @@ button:hover {
         0 0 15px #8a2b2b, 0 0 20px #682020,
         0 0 35px #571515;
 }
+
+@media (max-width: 450px) {
+    #tituloGG {
+        font-size: 80px;
+    }
+    #titulo {
+        font-size: 50px;
+    }
+    input {
+        font-size: x-large;
+    }
+}

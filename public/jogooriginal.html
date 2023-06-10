@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você Clicker</title>
+    <link rel="stylesheet" href="css/jogooriginal.css">
+</head>
+
+<body align="center">
+    <h1>Voce Clicker</h1>
+    <a href="index.html">Voltar</a><br><br>
+    <div id="jogo">
+        <div id="clicar">
+            <div id="quantidade">
+                <p id="quantia">30 Voce</p>
+                <p id="portempo">10 Voce p/seg</p>
+            </div>
+            <div id="voce" onclick="clickEmVoce()">
+                <!--div com seu personagem-->
+            </div>
+        </div>
+        <div id="compras">
+            <p id="ajudantes">Ajudantes</p>
+            <div id="lista">
+                <button id="ajudaClick" onclick="comprar('click')">Click - <i id="precoClick">50</i> - <b id="quantClick">0</b></button>
+                <button id="ajudaVoce" onclick="comprar('voce')">Voce - <i id="precoVoce">200</i> - <b id="quantVoce">0</b></button>
+            </div>
+            <p id="melhoria">Melhorias</p>
+            <div id="upgrades">
+                <button id="melhoraMouse" onclick="melhoria('mouse')">Mouse em dobro - <i id="melhorMouse">200</i></button>
+                <button id="melhoraClick" onclick="melhoria('click')">Click em dobro - <i id="melhorClick">500</i></button>
+                <button id="melhoraVoce" onclick="melhoria('voce')">Voce em dobro - <i id="melhorVoce">2000</i></button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/jogooriginal.js"></script>
+
+</html>

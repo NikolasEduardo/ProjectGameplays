@@ -1,11 +1,7 @@
 var jsonuser = "api/usuarios";
 var nome = JSON.parse(localStorage.getItem('nomeUsuario'))[0]
 var senha = JSON.parse(localStorage.getItem('nomeUsuario'))[1]
-var fotoperfil = `
-<div id="foto" style='background-color: ${JSON.parse(localStorage.getItem('perfilPersonagem'))[1]}'>
-            ${JSON.parse(localStorage.getItem('nomeUsuario'))[2]}
-        </div>
-`;
+var fotoperfil = JSON.parse(localStorage.getItem('nomeUsuario'))[2];
 var cor = JSON.parse(localStorage.getItem('nomeUsuario'))[3]
 var xp = JSON.parse(localStorage.getItem('nomeUsuario'))[4]
 level = (`${xp / 1000}`).split(".")[0];
@@ -50,24 +46,67 @@ function atualizarDados() {
                     senha: senha,
                     fotoperfil: fotoperfil,
                     cor: cor,
-                    xp: JSON.parse(localStorage.getItem('nomeUsuario'))[4]
+                    xp: JSON.parse(localStorage.getItem('nomeUsuario'))[4],
+                    fundoPersonagem: JSON.parse(localStorage.getItem('nomeUsuario'))[5],
+                    corpoPersona: JSON.parse(localStorage.getItem('nomeUsuario'))[6],
+                    pelagem: JSON.parse(localStorage.getItem('nomeUsuario'))[7],
+                    tipoCabelo: JSON.parse(localStorage.getItem('nomeUsuario'))[8],
+                    coloracaoCabelo: JSON.parse(localStorage.getItem('nomeUsuario'))[9],
+                    tipoChapeu: JSON.parse(localStorage.getItem('nomeUsuario'))[10],
+                    brilhoCabelo: JSON.parse(localStorage.getItem('nomeUsuario'))[11],
+                    brilhoChapeu: JSON.parse(localStorage.getItem('nomeUsuario'))[12],
+                    grayscaleCabelo: JSON.parse(localStorage.getItem('nomeUsuario'))[13],
+                    grayscaleChapeu: JSON.parse(localStorage.getItem('nomeUsuario'))[14],
+                    grayscaleCorpo: JSON.parse(localStorage.getItem('nomeUsuario'))[15],
+                    hueRotateCabelo: JSON.parse(localStorage.getItem('nomeUsuario'))[16],
+                    hueRotateChapeu: JSON.parse(localStorage.getItem('nomeUsuario'))[17],
+                    hueRotateCorpo: JSON.parse(localStorage.getItem('nomeUsuario'))[18],
+                    invertCabelo: JSON.parse(localStorage.getItem('nomeUsuario'))[19],
+                    invertChapeu: JSON.parse(localStorage.getItem('nomeUsuario'))[20],
+                    invertCorpo: JSON.parse(localStorage.getItem('nomeUsuario'))[21]
                 })
             })
                 .then(response => response.json())
         })
-    fetch(`${jsonuser}?nome=${nome}`)
-        .then(response => response.json())
-        .then(data => {
-            //inserir um dado local
-            localStorage.setItem("nomeUsuario", JSON.stringify([data[0].nome, data[0].senha, data[0].fotoperfil, data[0].cor, data[0].xp]));
-            console.log("funcionou");
-        })
+    setTimeout(function () {
+        fetch(`${jsonuser}?nome=${nome}`)
+            .then(response => response.json())
+            .then(data => {
+                //inserir um dado local
+                localStorage.setItem("nomeUsuario", JSON.stringify([
+                    data[0].nome,
+                    data[0].senha,
+                    data[0].fotoperfil,
+                    data[0].cor,
+                    data[0].xp,
+                    data[0].fundoPersonagem,
+                    data[0].corpoPersona,
+                    data[0].pelagem,
+                    data[0].tipoCabelo,
+                    data[0].coloracaoCabelo,
+                    data[0].tipoChapeu,
+                    data[0].brilhoCabelo,
+                    data[0].brilhoChapeu,
+                    data[0].grayscaleCabelo,
+                    data[0].grayscaleChapeu,
+                    data[0].grayscaleCorpo,
+                    data[0].hueRotateCabelo,
+                    data[0].hueRotateChapeu,
+                    data[0].hueRotateCorpo,
+                    data[0].invertCabelo,
+                    data[0].invertChapeu,
+                    data[0].invertCorpo
+                ]));
+                console.log("funcionou");
+            })
+    }, 1000)
 }
 
 console.log(fotoperfil);
 
 function deslogar() {
     localStorage.removeItem("nomeUsuario");
+    localStorage.removeItem("perfilPersonagem");
     window.location.replace("index.html");
 }
 

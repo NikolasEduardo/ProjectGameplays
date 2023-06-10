@@ -98,8 +98,14 @@ function escapeHTML(text) {
     });
 }
 
+document.getElementById('mensagem').addEventListener('keyup', evento => {
+    if (evento.key == "Enter") {
+        enviarMensagem(evento);
+    }
+})
+
 //Adiciona um evento para o envio do formulário
-document.querySelector('form').addEventListener('submit', evento => {
+function enviarMensagem(evento) {
     //Previne o envio padrão do formulário para não atualizar a página
     evento.preventDefault();
     //Obptem o valor do input do nome do usuário
@@ -120,42 +126,44 @@ document.querySelector('form').addEventListener('submit', evento => {
     //Limpa o input da mensagem
     mensagemInput.value = '';
 
-    fetch(`api/usuarios?nome=${nomeInput}`)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data[0].id);
-            idUser = data[0].id;
-            fetch(`api/usuarios/${data[0].id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    nome: nomeInput,
-                    senha: JSON.parse(localStorage.getItem('nomeUsuario'))[1],
-                    fotoperfil: fotoperfil,
-                    cor: cor,
-                    xp: JSON.parse(localStorage.getItem('nomeUsuario'))[4] + 5
+    if (mensagem != "") {
+        fetch(`api/usuarios?nome=${nomeInput}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data[0].id);
+                idUser = data[0].id;
+                fetch(`api/usuarios/${data[0].id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        nome: nomeInput,
+                        senha: JSON.parse(localStorage.getItem('nomeUsuario'))[1],
+                        fotoperfil: fotoperfil,
+                        cor: cor,
+                        xp: JSON.parse(localStorage.getItem('nomeUsuario'))[4] + 5
+                    })
                 })
+                    .then(response => response.json())
             })
-                .then(response => response.json())
-        })
 
-    fetch(`api/mensagens`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            nome: nome,
-            mensagem: mensagem,
-            imagem: imagemUser,
-            cor: corUser,
-            server: servidor
+        fetch(`api/mensagens`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: nome,
+                mensagem: mensagem,
+                imagem: imagemUser,
+                cor: corUser,
+                server: servidor
+            })
         })
-    })
-        .then(response => response.json())
-});
+            .then(response => response.json())
+    }
+};
 
 function atualizarJson() {
     setTimeout(function () {
