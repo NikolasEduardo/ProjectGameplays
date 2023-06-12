@@ -107,34 +107,30 @@ function enviarDados() {
         })
     })
         .then(response => response.json())
-    fetch(`${jsonuser}?nome=${username}`)
-        .then(response => response.json())
-        .then(data => {
             //inserir um dado local
             localStorage.setItem("nomeUsuario", JSON.stringify([
-                data[0].nome,
-                data[0].senha,
-                data[0].fotoperfil,
-                data[0].cor,
-                data[0].xp,
-                data[0].fundoPersonagem,
-                data[0].corpoPersona,
-                data[0].pelagem,
-                data[0].tipoCabelo,
-                data[0].coloracaoCabelo,
-                data[0].tipoChapeu,
-                data[0].brilhoCabelo,
-                data[0].brilhoChapeu,
-                data[0].grayscaleCabelo,
-                data[0].grayscaleChapeu,
-                data[0].grayscaleCorpo,
-                data[0].hueRotateCabelo,
-                data[0].hueRotateChapeu,
-                data[0].hueRotateCorpo,
-                data[0].invertCabelo,
-                data[0].invertChapeu,
-                data[0].invertCorpo
+                nome: username,
+                senha: senhauser,
+                fotoperfil: "\n<div id=\"foto\" style='background-color: #ffa7a7;'>\n                \n            <div id=\"corpo\" style=\"background-image: url(&quot;images/customizar/Personagens/Cachorro/1.png&quot;); filter: grayscale(0%) hue-rotate(0deg) invert(0%);\"></div>\n            <div id=\"cabelo\" style=\"background-image: url(&quot;&quot;); filter: brightness(100%) grayscale(0%) hue-rotate(0deg) invert(0%);\"></div>\n            <div id=\"chapeu\" style=\"background-image: url(&quot;&quot;); filter: brightness(100%) grayscale(0%) hue-rotate(0deg) invert(0%);\"></div>\n        \n\n               </div>",
+                cor: "white",
+                xp: 0,
+                fundoPersonagem: "#ffa7a7",
+                corpoPersona: 0,
+                pelagem: 1,
+                tipoCabelo: 0,
+                coloracaoCabelo: 1,
+                tipoChapeu: 0,
+                brilhoCabelo: 9,
+                brilhoChapeu: 9,
+                grayscaleCabelo: 0,
+                grayscaleChapeu: 0,
+                grayscaleCorpo: 0,
+                hueRotateCabelo: 0,
+                hueRotateChapeu: 0,
+                hueRotateCorpo: 0,
+                invertCabelo: 0,
+                invertChapeu: 0,
+                invertCorpo: 0
             ]));
             console.log("funcionou");
-        })
 }
