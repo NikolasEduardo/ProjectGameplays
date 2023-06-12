@@ -66,6 +66,43 @@ if (localStorage.getItem('nomeUsuario') != null) {
             })
     }catch (error) {
         console.log('sem dados ainda');
+        fetch(`${jsonuser}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data[0].id);
+                idUser = data[0].id;
+                fetch(`${jsonuser}/${data[0].id}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        nome: nome,
+                        senha: senha,
+                        fotoperfil: imagem,
+                        cor: cor,
+                        xp: JSON.parse(localStorage.getItem('nomeUsuario'))[4],
+                        fundoPersonagem: JSON.parse(localStorage.getItem('perfilPersonagem'))[1],
+                        corpoPersona: JSON.parse(localStorage.getItem('perfilPersonagem'))[2],
+                        pelagem: JSON.parse(localStorage.getItem('perfilPersonagem'))[3],
+                        tipoCabelo: JSON.parse(localStorage.getItem('perfilPersonagem'))[4],
+                        coloracaoCabelo: JSON.parse(localStorage.getItem('perfilPersonagem'))[5],
+                        tipoChapeu: JSON.parse(localStorage.getItem('perfilPersonagem'))[6],
+                        brilhoCabelo: JSON.parse(localStorage.getItem('perfilPersonagem'))[7],
+                        brilhoChapeu: JSON.parse(localStorage.getItem('perfilPersonagem'))[8],
+                        grayscaleCabelo: JSON.parse(localStorage.getItem('perfilPersonagem'))[9],
+                        grayscaleChapeu: JSON.parse(localStorage.getItem('perfilPersonagem'))[10],
+                        grayscaleCorpo: JSON.parse(localStorage.getItem('perfilPersonagem'))[11],
+                        hueRotateCabelo: JSON.parse(localStorage.getItem('perfilPersonagem'))[12],
+                        hueRotateChapeu: JSON.parse(localStorage.getItem('perfilPersonagem'))[13],
+                        hueRotateCorpo: JSON.parse(localStorage.getItem('perfilPersonagem'))[14],
+                        invertCabelo: JSON.parse(localStorage.getItem('perfilPersonagem'))[15],
+                        invertChapeu: JSON.parse(localStorage.getItem('perfilPersonagem'))[16],
+                        invertCorpo: JSON.parse(localStorage.getItem('perfilPersonagem'))[17]
+                    })
+                })
+                    .then(response => response.json())
+            })
     }
     
     setTimeout(function () {
