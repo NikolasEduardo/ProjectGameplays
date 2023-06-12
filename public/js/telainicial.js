@@ -2,7 +2,11 @@ conta = document.getElementById("conta");
 var jsonuser = "api/usuarios";
 var nome = JSON.parse(localStorage.getItem('nomeUsuario'))[0]
 var senha = JSON.parse(localStorage.getItem('nomeUsuario'))[1]
-var imagem = JSON.parse(localStorage.getItem('perfilPersonagem'))[0]
+try {
+    var imagem = JSON.parse(localStorage.getItem('perfilPersonagem'))[0]
+} catch (error) {
+    var imagem = JSON.parse(localStorage.getItem('nomeUsuario'))[2]
+}
 var cor = JSON.parse(localStorage.getItem('nomeUsuario'))[3]
 var xp = JSON.parse(localStorage.getItem('nomeUsuario'))[4]
 level = (`${xp / 1000}`).split(".")[0];
