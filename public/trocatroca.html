@@ -16,7 +16,7 @@
     <br>
     <br>
     <form>
-        <input type="text" id="palavra" placeholder="Digite uma palavra" maxlength="20"/>
+        <input type="text" id="palavra" placeholder="Digite uma palavra" maxlength="20" />
         <br>
         <button onclick="muda_palavra(event)">Jogar</button>
     </form>
@@ -52,6 +52,17 @@
                 palavra[x].innerHTML = nova_palavra;
             }
         }
+    </script>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 </body>
 
