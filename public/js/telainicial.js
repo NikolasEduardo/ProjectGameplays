@@ -74,7 +74,7 @@ if (localStorage.getItem('nomeUsuario') != null) {
                         .then(data => {
                             console.log(data[0].id);
                             idUser = data[0].id;
-                            fetch(`${jsonuser}/${data[0].id}`, {
+                            fetch(`${jsonuser}`, {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json'
