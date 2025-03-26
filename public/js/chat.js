@@ -82,6 +82,11 @@ const mensagens = document.getElementById('mensagens');
 
 //Cria uma função para escapar os caracteres especiais do HTML
 function escapeHTML(text) {
+    for(x = 1; x < 4; x++) {
+        if(servidor == "semprotecao" + x) {
+            return text;
+        }
+    }
     return text.replace(/[&<>"']/g, function (match) {
         switch (match) {
             case "&":
